@@ -34,7 +34,8 @@
 
     <div class="nav-right nav-menu">
       <a class="nav-item is-tab">
-        <a><%= link_to('Profile', profiles_path) %></a>
+        <a class="nav-item is-tab is-hidden-mobile nav-links" href="/profiles">Profile</a>
+        <!-- <a><%= link_to('Profile', profiles_path) %></a> -->
         <% if user_signed_in? %>
         <a><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
         <% else %>

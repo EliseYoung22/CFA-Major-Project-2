@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.user_id = @user
+    @post.user_id = current_user.id
 
     respond_to do |format|
       if @post.save
@@ -67,10 +67,10 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-
-    def set_current_user
-       @user = current_user
-     end
+    #
+    # def set_current_user
+    #    @user = current_user
+    #  end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.
