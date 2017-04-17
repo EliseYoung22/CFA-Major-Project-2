@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  get 'contact', to:"contact#index"
+  post 'contact', to:"contact#mail"
+
+
   resources :comments
   resources :posts
   root 'pages#home'
 
   get 'pages/about'
 
-  get 'pages/contact'
+  # get 'pages/contact'
 
   get 'pages/forum'
 
