@@ -1,41 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div class="column is-one-third is-offset-one-third">
+  <div class="heading center-text border">
+      <%= image_tag @profile.avatar.url(:thumb) %>
+      <p>
+        <strong>Name:</strong>
+        <%= @profile.name %>
+      </p>
 
-<%= image_tag @profile.avatar.url(:thumb) %>
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+      <p>
+        <strong>Username:</strong>
+        <%= @profile.username %>
+      </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @profile.username %>
-</p>
+      <p>
+        <strong>Age:</strong>
+        <%= @profile.age %>
+      </p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @profile.age %>
-</p>
+      <p>
+        <strong>Gender:</strong>
+        <%= @profile.gender %>
+      </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @profile.gender %>
-</p>
+      <p>
+        <strong>City:</strong>
+        <%= @profile.city %>
+      </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @profile.city %>
-</p>
+      <p>
+        <strong>Bio:</strong>
+        <%= @profile.bio %>
+      </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
+      <p>
+        <strong>Interests:</strong>
+        <%= @profile.interests %>
+      </p>
+      <%= link_to 'Edit', edit_profile_path(@profile) %> |
+      <%= link_to 'Back', profiles_path %>
 
-<p>
-  <strong>Interests:</strong>
-  <%= @profile.interests %>
-</p>
-
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+    </div>
+  </div>
