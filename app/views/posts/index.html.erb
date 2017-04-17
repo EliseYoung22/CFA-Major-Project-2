@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 <body>
-  <div class="container">
-    <div class="row">
-      <div class="col s12">
-        <table class="table">
-          <h1>Posts</h1>
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border">
+      <h1> Posts</h1>
+    </div>
+  </div>
+  <div class="column is-half is-offset-one-quarter">
+    <table>
           <thead>
             <tr>
               <th>Title</th>
@@ -19,10 +21,12 @@
               <tr>
                 <td><%= post.title %></td>
                 <td><%= post.content %></td>
-                <td><%= post.user %></td>
+                <td><%= post.user.email %></td>
                 <td><%= link_to 'Show', post %></td>
-                <td><%= link_to 'Edit', edit_post_path(post) %></td>
-                <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% if post.user == current_user %>
+                  <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+                  <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
               </tr>
             <% end %>
           </tbody>

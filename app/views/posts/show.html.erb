@@ -1,19 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="column is-half is-offset-one-quarter">
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @post.content %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
+  <p>
+    <strong>User:</strong>
+    <%= @post.user.email %>
+  </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+  <% if @post.user == current_user %>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+  <% end %>
+  <!-- <%= link_to 'Edit', edit_post_path(@post) %> | -->
+  <%= link_to 'Back', posts_path %>
+</div>

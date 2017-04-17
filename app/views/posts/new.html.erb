@@ -1,5 +1,10 @@
-<h1>New Post</h1>
+<div class="column is-one-third is-offset-one-third">
+  <div class="heading center-text border">
+    <h1> New Post</h1>
+  </div>
+</div>
+<div class="column is-half is-offset-one-quarter">
+  <%= render 'form', post: @post %>
 
-<%= render 'form', post: @post %>
-
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Back', posts_path %>
+</div>

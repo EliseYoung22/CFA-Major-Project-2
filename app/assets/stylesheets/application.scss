@@ -14,10 +14,34 @@
  *= require_self
  */
 @import "bulma";
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+$dark: #424652;
 
-.title {
+.heading {
   padding-top: 20px;
+  color: #4D545C;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 30px;
+}
+.nav-links {
+  padding-top: 20px;
+  color: #4D545C;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 20px;
 }
 .center-text {
   text-align: center;
+}
+
+.border {
+  border: 1px solid #4D545C;
+  padding: 5px 5px;
+  margin-bottom: 20px;
+}
+.table-border {
+  border: 1px solid #4D545C;
+  padding: 5px 5px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
