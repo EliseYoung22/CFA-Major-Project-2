@@ -1,4 +1,4 @@
-<body>
+<!-- <body>
   <header id ="main_navigation" class="clearfix">
     <a href="/" class="name">Name</a>
     <nav>
@@ -19,4 +19,29 @@
           <% end %>
     </ul>
   </header>
-</body>
+</body> -->
+
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      <a class="nav-item">
+        <img src="" alt="Bulma logo">
+      </a>
+      <a class="nav-item is-tab is-hidden-mobile" href="/pages/about">About</a>
+      <a class="nav-item is-tab is-hidden-mobile" href="/pages/forum">Forum</a>
+      <a class="nav-item is-tab is-hidden-mobile" href="/pages/contact">Contact</a>
+
+    </div>
+
+    <div class="nav-right nav-menu">
+      <a class="nav-item is-tab">
+        <a><%= link_to('Profile', profiles_path) %></a>
+        <% if user_signed_in? %>
+        <a><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
+        <% else %>
+        <a><%= link_to('Login', new_user_session_path)  %></a>
+        <% end %>
+      </a>
+    </div>
+  </div>
+</nav>
