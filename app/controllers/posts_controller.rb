@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    # if params[:category]
+    #   @posts = Post.where()
+    # end
   end
 
   # GET /posts/1
@@ -68,7 +71,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.friendly.find(params[:id])
     end
     #
     # def set_current_user

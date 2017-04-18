@@ -17,7 +17,8 @@
         </div>
         <footer class="card-footer">
           <p class="card-footer-item">
-            <a href="/posts">Join to the conversation!</a>
+            <!-- <a href="/posts?category=books">Join to the conversation!</a> -->
+            <%= link_to 'Join to the conversation!', posts_path(category: 'books') %>
           </p>
         </footer>
       </div>
