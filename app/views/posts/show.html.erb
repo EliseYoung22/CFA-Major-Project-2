@@ -1,30 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <div class="column is-half is-offset-one-quarter">
-  <p>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </p>
+  <div class="border">
+    <p>
+      <strong>Title:</strong>
+      <%= @post.title %>
+    </p>
 
-  <p>
-    <strong>Content:</strong>
-    <%= @post.content %>
-  </p>
+    <p>
+      <strong>Content:</strong>
+      <%= @post.content %>
+    </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= @post.user.email %>
-  </p>
+    <p>
+      <strong>User:</strong>
+      <%= @post.user.email %>
+    </p>
 
-  <% if @post.user == current_user %>
-    <td><%= link_to 'Edit', edit_topic_post_path(@post.topic, @post) %></td>
-  <% end %>
-  <%= link_to 'Back', topic_posts_path(@post.topic) %>
+    <% if @post.user == current_user %>
+      <td><%= link_to 'Edit', edit_topic_post_path(@post.topic, @post) %></td>
+    <% end %>
+    <%= link_to 'Back', topic_posts_path(@post.topic) %>
+  </div>
 
-  <%= render 'comments/form', comment: @comment, post: @post %>
+  <div class="border">
+    <%= render 'comments/form', comment: @comment, post: @post %>
+  </div>
 
   <% @comments.each do |comment| %>
-    <p><%= comment.user.email %></p>
-    <p><%= comment.content %></p>
-  <% end %>
+   <div class="border">
+      <p><%= comment.user.email %></p>
+      <p><%= comment.content %></p>
+      </div>
+   <% end %>
 </div>

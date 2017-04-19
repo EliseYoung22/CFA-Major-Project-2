@@ -18,18 +18,21 @@
 
           <tbody>
             <% @posts.each do |post| %>
-              <tr class="box">
-                <td><%= post.title %></td>
-                <td><%= post.content %></td>
-                <td><%= post.user.email %></td>
-                <td><%= link_to 'Show',  topic_post_path(post.topic, post) %></td>
-                
-              </tr>
+              <ul class="box">
+                <li>Title:<%= post.title %></li>
+                <li><%= post.content %></li>
+                <li>User:<%= post.user.email %></li>
+                <%= link_to 'Show',  topic_post_path(post.topic, post) %>
+                  <% if post.user == current_user %>
+                  <%= link_to 'Edit', edit_topic_post_path(post.topic, post)%>
+                  <%= link_to 'Delete', topic_post_path(post.topic, post), method: :delete, data: { confirm: 'Are you sure?' } %>
+                 <% end %>
+              </ul>
             <% end %>
           </tbody>
         </table>
         <br>
-         <%= link_to 'New Post', new_topic_post_path %>
+         <%= link_to 'Join the conversation!', new_topic_post_path, class: "button" %>
         </br>
       </div>
     </div>

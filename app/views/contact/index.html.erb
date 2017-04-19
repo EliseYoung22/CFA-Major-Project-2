@@ -6,7 +6,7 @@
     <% else %>
   <% end %>
 <div class="column is-one-third is-offset-one-third">
-  <div class="center-text border">
+  <div class="heading center-text border">
    <h1>Contact Us</h1>
  </div>
 </div>
@@ -18,6 +18,25 @@
         <%= f.input :email, placeholder: 'type email here' %>
         <%= f.input :message, placeholder: 'type message here', :as => :text %>
         <%= f.button :submit, "Send" %>
+      </div>
     <% end %>
   </div>
 </div>
+
+
+<!-- <div class="column is-one-third is-offset-one-third">
+  <div class="center-text border">
+    <div class="field">
+      <%= simple_form_for :contact do |f| %>
+      <label class="label"><%= f.input :email, placeholder: 'type email here' %></label>
+      <div class="field">
+          <label class="label"></label>
+          <p class="control"><%= f.input :message, placeholder: 'type message here', :as => :text %>
+            <textarea class="textarea" placeholder="Textarea"></textarea>
+          </p>
+        </div>
+      <% end %>
+      </p>
+    </div>
+  </div>
+</div> -->

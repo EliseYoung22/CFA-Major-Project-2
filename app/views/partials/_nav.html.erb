@@ -39,9 +39,9 @@
         <a class="nav-item is-tab is-hidden-mobile nav-links" href="/profiles">Profile</a>
         <!-- <a><%= link_to('Profile', profiles_path) %></a> -->
         <% if user_signed_in? %>
-        <a class="nav-item is-tab is-hidden-mobile nav-links"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></a>
+        <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class:"nav-item" %>
         <% else %>
-        <a class="nav-item is-tab is-hidden-mobile nav-links"><%= link_to('Login', new_user_session_path)  %></a>
+        <%= link_to 'Login', new_user_session_path, class:"nav-item" %>
         <% end %>
       </a>
     </div>
