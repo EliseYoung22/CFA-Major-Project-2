@@ -22,17 +22,14 @@
                 <td><%= post.title %></td>
                 <td><%= post.content %></td>
                 <td><%= post.user.email %></td>
-                <td><%= link_to 'Show', post %></td>
-                <% if post.user == current_user %>
-                  <td><%= link_to 'Edit', edit_post_path(post) %></td>
-                  <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
+                <td><%= link_to 'Show',  topic_post_path(post.topic, post) %></td>
+                
               </tr>
             <% end %>
           </tbody>
         </table>
         <br>
-         <%= link_to 'New Post', new_post_path %>
+         <%= link_to 'New Post', new_topic_post_path %>
         </br>
       </div>
     </div>

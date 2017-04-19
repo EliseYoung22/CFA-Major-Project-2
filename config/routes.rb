@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
-  resources :topics
+  resources :topics do
+    resources :posts do
+      resources :comments, :except => [:update, :destroy, :show, :new]
+      resources :comments, :only => [:post, :edit]
+    end
+  end
+
+resources :conversations do
+  resources :messages
+ end
+
+
   get 'contact', to:"contact#index"
   post 'contact', to:"contact#mail"
 
 
-  resources :comments
-  resources :posts
+#  resources :comments
   root 'pages#home'
 
   get 'pages/about'

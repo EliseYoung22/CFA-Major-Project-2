@@ -15,10 +15,13 @@
   <%= @topic.image %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Slug:</strong>
   <%= @topic.slug %>
-</p>
+</p> -->
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Edit', edit_topic_post_path(@topic) %> |
+<%= link_to 'Back', topic_post_path(@topic) %>
+
+
+<%= link_to 'Join the conversation', new_topic_post_path(@topic) %>

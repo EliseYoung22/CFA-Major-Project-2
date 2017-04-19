@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    # @posts = Post.all
     # if params[:category]
     #   @posts = Post.where()
     # end
+    @topic = Topic.friendly.find(params[:topic_id])
+    @posts = @topic.posts
   end
 
   # GET /posts/1
@@ -15,11 +17,13 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments
+
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @topic = Topic.friendly.find(params[:topic_id])
   end
 
   # GET /posts/1/edit
@@ -31,10 +35,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
+    @topic = Topic.friendly.find(params[:topic_id])
+    @post.topic_id = @topic.id
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to topic_posts_path(@topic), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -46,10 +52,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    authorize @post
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to edit_topic_post_path(@topic), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -63,7 +68,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to topic_posts_path(@topic), notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

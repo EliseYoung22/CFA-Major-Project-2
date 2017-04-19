@@ -10,6 +10,8 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+    @topic = Topic.friendly.find(params[:id])
+
   end
 
   # GET /topics/new
@@ -56,7 +58,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic.destroy
     respond_to do |format|
-      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
+      format.html { redirect_to @topic, notice: 'Topic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +66,7 @@ class TopicsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
-      @topic = Topic.find(params[:id])
+      @topic = Topic.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

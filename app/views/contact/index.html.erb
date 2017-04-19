@@ -5,13 +5,19 @@
       <div class="alert alert-danger"><%= flash[:warning] %></div>
     <% else %>
   <% end %>
+<div class="column is-one-third is-offset-one-third">
+  <div class="center-text border">
+   <h1>Contact Us</h1>
+ </div>
+</div>
 
-<h1>Contact Us</h1>
 
-<%= simple_form_for :contact do |f| %>
-    <%= f.input :email, placeholder: 'type email here' %>
-    <%= f.input :message, placeholder: 'type message here', :as => :text %>
-    <%= f.button :submit, "Send" %>
-<% end %>
-
+<div class="column is-one-third is-offset-one-third">
+  <div class="center-text border">
+    <%= simple_form_for :contact do |f| %>
+        <%= f.input :email, placeholder: 'type email here' %>
+        <%= f.input :message, placeholder: 'type message here', :as => :text %>
+        <%= f.button :submit, "Send" %>
+    <% end %>
+  </div>
 </div>

@@ -4,12 +4,12 @@ class Post < ApplicationRecord
   has_many :comments
 
   extend FriendlyId
-  friendly_id :slug_candidate, use: :slugged
+  friendly_id :title, use: :slugged
 
-  def slug_candidate
-    [
-      :title,
-      [:title, :content]
-    ]
-  end
+  # def slug_candidate
+  #   [
+  #     :title,
+  #     [:title, :content]
+  #   ]
+  # end
 end
