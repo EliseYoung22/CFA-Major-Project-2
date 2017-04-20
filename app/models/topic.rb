@@ -10,4 +10,5 @@ class Topic < ApplicationRecord
   #     [:name, :description]
   #   ]
   # end
+
 end

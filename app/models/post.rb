@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :topic
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   extend FriendlyId
   friendly_id :title, use: :slugged
@@ -12,4 +12,9 @@ class Post < ApplicationRecord
   #     [:title, :content]
   #   ]
   # end
+
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%")
+    where("content LIKE ?", "%#{search}%")
+  end
 end

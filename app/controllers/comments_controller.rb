@@ -5,6 +5,8 @@ class CommentsController < ApplicationController
   # GET /comments.json
 
   def index
+    @post = Post.friendly.find(params[:post_id])
+
     @comments = Comment.all
   end
 
@@ -67,6 +69,8 @@ class CommentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
       @comment = Comment.find(params[:id])
+      @post = Post.friendly.find(params[:post_id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

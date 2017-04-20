@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :topics do
     resources :posts do
-      resources :comments, :except => [:update, :destroy, :show, :new]
-      resources :comments, :only => [:post, :edit]
+      resources :comments
     end
   end
 

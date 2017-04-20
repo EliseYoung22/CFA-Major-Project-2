@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # before_action :set_topic, only: [:new, :edit, :create, :update, :destroy]
+
 
   # GET /posts
   # GET /posts.json
@@ -10,6 +12,12 @@ class PostsController < ApplicationController
     # end
     @topic = Topic.friendly.find(params[:topic_id])
     @posts = @topic.posts
+
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
 
   # GET /posts/1
@@ -28,14 +36,15 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @topic = Topic.friendly.find(params[:topic_id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
     @topic = Topic.friendly.find(params[:topic_id])
+    @post = @topic.posts.new(post_params)
+    @post.user_id = current_user.id
     @post.topic_id = @topic.id
 
     respond_to do |format|
@@ -52,9 +61,10 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @topic = Topic.friendly.find(params[:topic_id])
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to edit_topic_post_path(@topic), notice: 'Post was successfully updated.' }
+        format.html { redirect_to topic_post_path(@topic, @post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -66,6 +76,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @topic = Topic.friendly.find(params[:topic_id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to topic_posts_path(@topic), notice: 'Post was successfully destroyed.' }
@@ -77,6 +88,8 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.friendly.find(params[:id])
+      @topic = Topic.friendly.find(params[:topic_id])
+
     end
     #
     # def set_current_user

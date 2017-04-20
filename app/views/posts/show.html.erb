@@ -31,6 +31,8 @@
    <div class="border">
       <p><%= comment.user.email %></p>
       <p><%= comment.content %></p>
+      <td><%= link_to 'Edit', edit_topic_post_comment_path(@post, comment) %></td>
+      <td><%= link_to 'Destroy',topic_post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </div>
    <% end %>
 </div>
