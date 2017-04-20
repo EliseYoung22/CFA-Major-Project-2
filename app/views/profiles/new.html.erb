@@ -1,5 +1,21 @@
-<h1>New Profile</h1>
+<p id="notice"><%= notice %></p>
+<body>
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border">
+      <h1> Create a new profile</h1>
+    </div>
 
-<%= render 'form', profile: @profile %>
+
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+          <%= render 'form', profile: @profile %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
 
 <%= link_to 'Back', profiles_path %>
