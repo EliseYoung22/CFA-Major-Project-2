@@ -61,6 +61,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    authorize @post
     @topic = Topic.friendly.find(params[:topic_id])
     respond_to do |format|
       if @post.update(post_params)
@@ -76,6 +77,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    authorize @post
     @topic = Topic.friendly.find(params[:topic_id])
     @post.destroy
     respond_to do |format|

@@ -39,7 +39,7 @@
         <a class="nav-item is-tab is-hidden-mobile nav-links" href="/profiles">Profile</a>
         <!-- <a><%= link_to('Profile', profiles_path) %></a> -->
         <% if user_signed_in? %>
-        <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class:"nav-item" %>
+        <%= link_to "Logout: #{current_user.email}", destroy_user_session_path, :method => :delete, class:"nav-item" %>
         <% else %>
         <%= link_to 'Login', new_user_session_path, class:"nav-item" %>
         <% end %>
