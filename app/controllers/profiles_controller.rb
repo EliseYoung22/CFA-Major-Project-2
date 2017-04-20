@@ -6,6 +6,11 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+      if params[:search]
+      @profile = Profile.search(params[:search]).order("created_at DESC")
+     else
+      @profile = Profile.all.order('created_at DESC')
+    end
   end
 
   # GET /profiles/1

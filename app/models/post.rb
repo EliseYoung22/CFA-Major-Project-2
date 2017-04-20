@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   # end
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%")
+    where("title LIKE ?", "%#{search}%")
     where("content LIKE ?", "%#{search}%")
   end
 end
