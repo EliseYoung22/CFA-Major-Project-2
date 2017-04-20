@@ -14,12 +14,14 @@
 
 <div class="column is-one-third is-offset-one-third">
   <div class="center-text border">
-    <%= simple_form_for :contact do |f| %>
-        <%= f.input :email, placeholder: 'type email here' %>
-        <%= f.input :message, placeholder: 'type message here', :as => :text %>
-        <%= f.button :submit, "Send" %>
-      </div>
-    <% end %>
+    <ul>
+      <%= simple_form_for :contact do |f| %>
+        <li class="padding"><%= f.input :email, placeholder: 'type email here' %></li>
+          <li class="padding"><%= f.input :message, placeholder: 'type message here', :as => :text %></li>
+          <%= f.button :submit, "Send" %>
+        </ul>
+        </div>
+      <% end %>
   </div>
 </div>
 

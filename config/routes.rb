@@ -10,8 +10,8 @@ resources :conversations do
  end
 
 
-  get 'contact', to:"contact#index"
-  post 'contact', to:"contact#mail"
+  get '/contact', to:"contact#index"
+  post '/contact', to:"contact#mail"
 
 
 #  resources :comments

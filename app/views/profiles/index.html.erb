@@ -1,7 +1,12 @@
-<%= form_tag(profiles_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
-<% end %>
+<div class="column is-one-third is-offset-one-third">
+  <div class="heading center-text border">
+    <%= form_tag(profiles_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Profiles" %>
+    <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 <body>
   <div class="column is-one-third is-offset-one-third">
@@ -49,40 +54,37 @@
   </body> -->
 
   <body>
-    <% @profiles.each do |profile| %>
     <div class="container">
-      <div class="columns">
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-content">
-              <p class="title">
-                <ul>
-                  <li><%= image_tag profile.avatar.url(:thumb) %></li>
-                  <li><%= profile.name %></li>
-                </ul>
-              </p>
-              <p class="subtitle">
-                <ul>
-                  <li><%= profile.username %></li>
-                  <li><%= profile.age %></li>
-                  <li><%= profile.gender %></li>
-                  <li><%= profile.city %></li>
-                  <li><%= profile.bio %></li>
-                  <li><%= profile.interests %></li>
-                </ul>
-              </p>
-              <footer class="card-footer">
-                <p class="card-footer-item">
-                <%= link_to 'Show', profile %>
-                <% if profile.user == current_user %>
-                  <td><%= link_to 'Edit', edit_profile_path(profile) %>
-                  <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
-              </p>
+      <div class="columns is-one-third">
+      <% @profiles.each do |profile| %>
+          <div class="column ">
+            <div class="card">
+              <div class="card-content">
+                <p class="title">
+                  <ul>
+                    <li><%= image_tag profile.avatar.url(:thumb) %></li>
+                    <li>Name:<%= profile.name %></li>
+                  </ul>
+                </p>
+                <p class="subtitle">
+                  <ul>
+                    <li>Username:<%= profile.username %></li>
+                    <li>Age:<%= profile.age %></li>
+                    <li>Gender:<%= profile.gender %></li>
+                    <li>Location:<%= profile.city %></li>
+                    <li>Bio:<%= profile.bio %></li>
+                    <li>Interests:<%= profile.interests %></li>
+                  </ul>
+                </p>
+                <footer class="card-footer">
+                  <p class="card-footer-item">
+                  <%= link_to 'Show', profile %>
+                    <td><%= link_to 'Edit', edit_profile_path(profile) %>
+                    <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </body>

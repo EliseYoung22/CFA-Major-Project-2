@@ -32,10 +32,10 @@
 
 <!-- <%= link_to 'New Topic', new_topic_path %> -->
 <body>
-  <% @topics.each do |topic| %>
-    <div class="container">
-      <div class="columns">
-        <div class="column is-one-third">
+  <div class="container">
+    <div class="columns is-one-third">
+   <% @topics.each do |topic| %>
+        <div class="column">
           <div class="card">
             <div class="card-content">
               <p class="title">
@@ -53,7 +53,7 @@
             </footer>
          </div>
        </div>
-      </div>
+     <% end %>
     </div>
-  <% end %>
+  </div>
 </body>

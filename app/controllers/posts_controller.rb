@@ -32,11 +32,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @topic = Topic.friendly.find(params[:topic_id])
+
   end
 
   # GET /posts/1/edit
   def edit
     @topic = Topic.friendly.find(params[:topic_id])
+
   end
 
   # POST /posts

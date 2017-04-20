@@ -1,6 +1,11 @@
-<h1>Editing Post</h1>
+<div class="column is-one-third is-offset-one-third">
+  <div class="heading center-text border">
+    <h1>Editing Post</h1>
+  </div>
 
-<%= render 'form', post: @post %>
-
-<%= link_to 'Show', topic_posts_path %> |
-<%= link_to 'Back', :back %>
+  <div class="column is-one-third is-offset-one-third">
+    <%= render 'form', post: @post %>
+    <%= link_to 'Show', topic_posts_path %> |
+    <%= link_to 'Back', :back %>
+  </div>
+</div>
