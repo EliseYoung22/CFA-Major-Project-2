@@ -6,11 +6,13 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     @profiles = Profile.all
+
       if params[:search]
       @profile = Profile.search(params[:search]).order("created_at DESC")
      else
       @profile = Profile.all.order('created_at DESC')
     end
+
   end
 
   # GET /profiles/1
@@ -52,6 +54,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    authorize @profile
     @profile = current_user.profile.find(params[:id])
     respond_to do |format|
       if @profile.update(profile_params)
@@ -67,6 +70,7 @@ class ProfilesController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
+    authorize @profile
     @profile.destroy
     respond_to do |format|
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }

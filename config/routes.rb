@@ -10,8 +10,8 @@ resources :conversations do
  end
 
 
-  get '/contact', to:"contact#index"
-  post '/contact', to:"contact#mail"
+  get 'contact', to:"contact#index"
+  post 'contact', to:"contact#mail"
 
 
 #  resources :comments
@@ -28,6 +28,8 @@ resources :conversations do
   get 'pages/professional_request'
 
   get 'pages/vouchers'
+  get 'pages/admin_dashboard'
+
 
   resources :profiles
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

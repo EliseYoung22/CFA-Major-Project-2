@@ -38,10 +38,20 @@
  </div>
 </div>
 
-<div class="column is-one-third is-offset-one-third">
+<!-- <div class="column is-one-third is-offset-one-third">
  <p> Feel like you need to chat with one of our awesome therapists?</p>
-</div>
+</div> -->
 
-<div class="column is-offset-5">
-  <a class="button is-large" href="/pages/professional_request">Request a Professional</a>
+<div>
+    <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% elsif flash[:warning] %>
+        <div class="alert alert-danger"><%= flash[:warning] %></div>
+      <% else %>
+    <% end %>
+    <%= simple_form_for :contact do |f| %>
+      <% f.input :email, placeholder: 'type email here' %></li>
+      <% f.input :message, placeholder: 'This person wants help', :as => :text %></li>
+      <%= f.button :submit, 'Request to talk to a counselor',redirect_to: pages_professional_request_path %>
+    <% end %>
 </div>

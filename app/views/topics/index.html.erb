@@ -33,7 +33,7 @@
 <!-- <%= link_to 'New Topic', new_topic_path %> -->
 <body>
   <div class="container">
-    <div class="columns is-one-third">
+    <div class="columns is-multiline">
    <% @topics.each do |topic| %>
         <div class="column">
           <div class="card">
@@ -48,6 +48,8 @@
             </div>
             <footer class="card-footer">
               <p class="card-footer-item">
+                <%= link_to 'Edit', edit_topic_path(topic) if current_user.admin? %>
+                <%= link_to 'Delete', topic, method: :delete, data: {confirm: 'Are you sure?'} if current_user.admin? %>
                 <%= link_to 'Show', topic_posts_path(topic) %>
               </p>
             </footer>
@@ -55,5 +57,6 @@
        </div>
      <% end %>
     </div>
+    <%= link_to 'New Topic', new_topic_path if current_user.admin? %>
   </div>
 </body>

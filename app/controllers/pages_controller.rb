@@ -21,4 +21,8 @@ class PagesController < ApplicationController
 
   def vouchers
   end
+
+  def admin_dashboard
+    @profiles = Profile.all
+  end
 end

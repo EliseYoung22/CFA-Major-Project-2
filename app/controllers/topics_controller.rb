@@ -41,6 +41,7 @@ class TopicsController < ApplicationController
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
+    authorize @topic
     respond_to do |format|
       if @topic.update(topic_params)
         format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }

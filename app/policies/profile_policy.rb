@@ -1,4 +1,4 @@
-class PostPolicy < ApplicationPolicy
+class ProfilePolicy < ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
@@ -9,7 +9,6 @@ class PostPolicy < ApplicationPolicy
   def update?
     @record.user == @user
     user.admin?
-
   end
 
   def destroy?

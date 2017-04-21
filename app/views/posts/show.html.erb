@@ -17,7 +17,7 @@
       <%= @post.user.email %>
     </p>
 
-    <% if @post.user == current_user %>
+    <% if policy(@post).update? %>
       <td><%= link_to 'Edit', edit_topic_post_path(@post.topic, @post) %></td>
     <% end %>
     <%= link_to 'Back', topic_posts_path(@post.topic) %>
