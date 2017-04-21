@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
-<div class="column is-one-third is-offset-one-third">
-  <div class="heading center-text border">
-      <h2>Topics</h2>
+<div class="background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border">
+        <h2>Topics</h2>
+    </div>
   </div>
 </div>
 
 <body>
   <div class="container">
     <div class="columns is-multiline">
-   <% @topics.each do |topic| %>
-        <div class="column">
-          <div class="card">
-            <div class="card-content">
-              <p class="title">
+     <% @topics.each do |topic| %>
+       <div class="column is-one-third ">
+         <div class="card is-one-third border-grey">
+           <div class="card-content">
+             <p class="title">
                 <%= topic.name %>
               <p class="subtitle">
                 <%= topic.name %>
@@ -22,9 +24,9 @@
             </div>
             <footer class="card-footer">
               <p class="card-footer-item">
-                <%= link_to 'Show', topic_posts_path(topic) %>
+                <%= link_to 'Show', topic_posts_path(topic), class: "space" %>
                 <% if policy(topic).update? %>
-                  <%= link_to 'Edit', edit_profile_path(topic)%>
+                  <%= link_to 'Edit', edit_profile_path(topic), class: "space"%>
                 <% end %>
                 <% if policy(topic).destroy? %>
                   <%= link_to 'Delete', topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %>

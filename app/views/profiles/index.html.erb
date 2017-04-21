@@ -9,9 +9,11 @@
 
 <p id="notice"><%= notice %></p>
 <body>
-  <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text border">
-      <h1> Profiles</h1>
+  <div class="background">
+    <div class="column is-one-third is-offset-one-third">
+      <div class="heading center-text border">
+        <h1> Profiles</h1>
+      </div>
     </div>
   </div>
 
@@ -21,7 +23,7 @@
       <% @profiles.each do |profile| %>
           <div class="column is-one-third ">
             <div class="card is-one-third">
-              <div class="card-content">
+              <div class="card-content border-grey">
                 <p class="title">
                   <ul>
                     <li><%= image_tag profile.avatar.url(:thumb) %></li>
