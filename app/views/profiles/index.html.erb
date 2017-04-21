@@ -30,7 +30,7 @@
                 </p>
                 <p class="subtitle">
                   <ul>
-                    <li>Username:<%= profile.username %></li>
+                    <li>Username:<%= profile.username%></li>
                     <li>Age:<%= profile.age %></li>
                     <li>Gender:<%= profile.gender %></li>
                     <li>Location:<%= profile.city %></li>
@@ -41,7 +41,7 @@
                 <footer class="card-footer">
                   <p class="card-footer-item">
                   <%= link_to 'Show', profile %>
-                    <% if policy(@profile).update?%>
+                  <% if policy(profile).update? %>
                     <%= link_to 'Edit', edit_profile_path(@profile)%>
                     <%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
                    <% end %>

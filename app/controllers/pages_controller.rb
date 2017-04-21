@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!, except: [:home, :about, :contact]
+  before_filter :authorize_admin, :admin_dashboard
 
   def home
   end
@@ -23,6 +24,7 @@ class PagesController < ApplicationController
   end
 
   def admin_dashboard
-    @profiles = Profile.all
+    @users = User.all
   end
+
 end

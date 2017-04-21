@@ -6,17 +6,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    # @posts = Post.all
-    # if params[:category]
-    #   @posts = Post.where()
-    # end
     @topic = Topic.friendly.find(params[:topic_id])
-    @posts = @topic.posts
 
     if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
+      @posts = @topic.posts.search(params[:search]).order("created_at DESC")
     else
-      @posts = Post.all.order('created_at DESC')
+      @posts = @topic.posts.order('created_at DESC')
     end
   end
 
@@ -25,20 +20,17 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @post.comments
-
   end
 
   # GET /posts/new
   def new
     @post = Post.new
     @topic = Topic.friendly.find(params[:topic_id])
-
   end
 
   # GET /posts/1/edit
   def edit
     @topic = Topic.friendly.find(params[:topic_id])
-
   end
 
   # POST /posts
@@ -63,8 +55,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
-    authorize @post
     @topic = Topic.friendly.find(params[:topic_id])
+    authorize @post
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to topic_post_path(@topic, @post), notice: 'Post was successfully updated.' }
@@ -79,8 +72,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    authorize @post
     @topic = Topic.friendly.find(params[:topic_id])
+    authorize @post
+
     @post.destroy
     respond_to do |format|
       format.html { redirect_to topic_posts_path(@topic), notice: 'Post was successfully destroyed.' }

@@ -13,13 +13,11 @@ resources :conversations do
   get 'contact', to:"contact#index"
   post 'contact', to:"contact#mail"
 
+  post 'request', to:"contact#help_request"
 
-#  resources :comments
   root 'pages#home'
 
   get 'pages/about'
-
-  # get 'pages/contact'
 
   get 'pages/forum'
 
@@ -28,6 +26,7 @@ resources :conversations do
   get 'pages/professional_request'
 
   get 'pages/vouchers'
+
   get 'pages/admin_dashboard'
 
 

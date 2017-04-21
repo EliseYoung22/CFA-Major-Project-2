@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
   def index
     @post = Post.friendly.find(params[:post_id])
-
     @comments = Comment.all
   end
 

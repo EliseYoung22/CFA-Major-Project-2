@@ -7,14 +7,13 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    @record.user == @user
-    user.admin?
+    @record.user == @user || user.admin? || user.counselor?
 
   end
 
   def destroy?
-    @record.user == @user
-    user.admin?
+    @record.user == @user || user.admin? || user.counselor?
+
   end
 
   class Scope < Scope

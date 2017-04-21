@@ -7,8 +7,7 @@ class TopicPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
-    user.councelor?
+    user.admin? || user.counselor?
   end
 
   def destroy?

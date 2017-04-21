@@ -5,32 +5,6 @@
   </div>
 </div>
 
-<table>
-  <!-- <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> -->
-
-  <!-- <tbody> -->
-    <!-- <% @topics.each do |topic| %> -->
-      <!-- <tr class="border card"> -->
-        <!-- <td><%= topic.name %></td> -->
-        <!-- <td><%= topic.description %></td> -->
-        <!-- <td><%= topic.image %></td> -->
-        <!-- <td><%= link_to 'Show', topic %></td> -->
-        <!-- <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      <!-- </tr> -->
-    <!-- <% end %> -->
-  <!-- </tbody> -->
-<!-- </table> -->
-
-<br>
-
-<!-- <%= link_to 'New Topic', new_topic_path %> -->
 <body>
   <div class="container">
     <div class="columns is-multiline">
@@ -48,9 +22,13 @@
             </div>
             <footer class="card-footer">
               <p class="card-footer-item">
-                <%= link_to 'Edit', edit_topic_path(topic) if current_user.admin? %>
-                <%= link_to 'Delete', topic, method: :delete, data: {confirm: 'Are you sure?'} if current_user.admin? %>
                 <%= link_to 'Show', topic_posts_path(topic) %>
+                <% if policy(topic).update? %>
+                  <%= link_to 'Edit', edit_profile_path(topic)%>
+                <% end %>
+                <% if policy(topic).destroy? %>
+                  <%= link_to 'Delete', topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </p>
             </footer>
          </div>

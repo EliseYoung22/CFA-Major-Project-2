@@ -36,8 +36,11 @@
         <strong>Interests:</strong>
         <%= @profile.interests %>
       </p>
-      
-      <%= link_to 'Edit', edit_profile_path(@profile) %> |
+
+      <% if policy(@profile).update? %>
+        <%= link_to 'Edit', edit_profile_path(@profile)%>
+        <%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+       <% end %>
       <%= link_to 'Back', profiles_path %>
 
     </div>

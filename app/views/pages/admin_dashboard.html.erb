@@ -1,3 +1,24 @@
-<% @profiles.each do |user| %>
-  <%= @profile.name %>
-<% end %>
+<div class="column is-one-third is-offset-one-third">
+  <div class="heading center-text border">
+      <h2>Admin Dashboard</h2>
+  </div>
+</div>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Location</th>
+      </tr>
+    </thead>
+
+    <tbody>
+  		<% @users.each do |user| %>
+  				<tr>
+  	        <td><%= user.email %></td>
+  	      </tr>
+  		<% end %>
+    </tbody>
+  </table>
+</div>

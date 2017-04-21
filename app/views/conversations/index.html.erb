@@ -29,8 +29,8 @@
        <% @users.each do |user| %>
         <% if user.id != current_user.id %>
          <div class="item">
-       <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-     </div>
+           <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+       </div>
       <% end %>
      <% end %>
      </div>
@@ -41,17 +41,3 @@
 <!-- <div class="column is-one-third is-offset-one-third">
  <p> Feel like you need to chat with one of our awesome therapists?</p>
 </div> -->
-
-<div>
-    <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-      <% elsif flash[:warning] %>
-        <div class="alert alert-danger"><%= flash[:warning] %></div>
-      <% else %>
-    <% end %>
-    <%= simple_form_for :contact do |f| %>
-      <% f.input :email, placeholder: 'type email here' %></li>
-      <% f.input :message, placeholder: 'This person wants help', :as => :text %></li>
-      <%= f.button :submit, 'Request to talk to a counselor',redirect_to: pages_professional_request_path %>
-    <% end %>
-</div>

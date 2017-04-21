@@ -20,8 +20,11 @@
   <%= @topic.slug %>
 </p> -->
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topic_post_path(@topic) %>
+<% if policy(@topic).update? %>
+  <%= link_to 'Edit', edit_profile_path(@topic)%>
+  <%= link_to 'Delete', edit_topic_path(@topic), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+ <%= link_to 'Back', topic_post_path(@topic) %>
 
 
 <%= link_to 'Join the conversation', new_topic_post_path(@topic) %>
