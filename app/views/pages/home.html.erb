@@ -1,7 +1,15 @@
-<div class="background">
-  <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text border">
-      <h2>Welcome!</h2>
+<body>
+  <!-- <div class="background"> -->
+    <div class="column is-one-third is-offset-one-third">
+      <div class="heading center-text border home-page">
+        <h2>Welcome!</h2>
+      </div>
+      <div class="button space button-space">
+        <%= link_to 'Sign Up!', new_user_registration_path %>
+      </div>
+      <div class="button">
+        <%= link_to 'Log In!', user_session_path %>
+      </div>
     </div>
   </div>
-</div>
+</body>

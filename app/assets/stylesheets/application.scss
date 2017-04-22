@@ -1,22 +1,20 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
  *
  *= require_tree .
  *= require_self
  */
+$primary: white;
 @import "bulma";
+@import "pages";
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
-$dark: #424652;
 
+
+body {
+  background-color: #738091;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
 .background {
   background-color: #738091;
   // background-image: url(asset-path('orangebackground.png'))
@@ -28,12 +26,7 @@ $dark: #424652;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 30px;
 }
-.nav-links {
-  padding-top: 20px;
-  color: #4D545C;
-  font-family: 'Didact Gothic', sans-serif;
-  font-size: 20px;
-}
+
 .center-text {
   text-align: center;
 }
@@ -68,4 +61,20 @@ $dark: #424652;
 
 .margin-bottom {
   margin-bottom: 20;
+}
+
+.home-page {
+  margin-top: 120px;
+}
+
+.button {
+  background-color: #738091;
+}
+.button-space {
+  margin-left: 100px
+}
+.nav-links {
+  padding-top: 20px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 20px;
 }
