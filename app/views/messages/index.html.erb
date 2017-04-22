@@ -1,5 +1,13 @@
-<div class="column is-one-third is-offset-one-third">
-  <div class=" center-text border-grey">
+<div class="background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border banner-colour">
+        <h2>chat</h2>
+    </div>
+  </div>
+</div>
+<div class="about-background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="center-text border topic-card">
       <h2 class="heading">Chat</h2>
       <% if @over_ten %>
        <%= link_to 'Show Previous', '?m=all' %>
@@ -22,14 +30,19 @@
        <% end %>
       <% end %>
       </div>
-<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
- <div class="field">
-   <%= f.text_area :body, class: "form-control" %>
- </div>
- <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
- <div>
-   <%= f.submit "Send", class: "button" %>
- </div>
-<% end %>
+      <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+       <div class="field">
+         <%= f.text_area :body, class: "form-control" %>
+       </div>
+       <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+       <div>
+         <%= f.submit "Send", class: "button" %>
+       </div>
+      <% end %>
+      <%= link_to 'Back', conversations_path %>
+
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Back', conversations_path %>
