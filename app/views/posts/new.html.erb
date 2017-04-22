@@ -1,10 +1,13 @@
-<div class="column is-one-third is-offset-one-third">
-  <div class="heading center-text border">
-    <h1> New Post</h1>
+<div class="background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border grey-background">
+      <h1> New Post</h1>
+    </div>
   </div>
 </div>
-<div class="column is-half is-offset-one-quarter border">
-  <%= render 'form', post: @post %>
-
-  <%#= link_to 'Back', posts_path %>
+<div class="about-background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="center-text border topic-card">
+        <%= render 'form', post: @post %>
+  </div>
 </div>

@@ -1,26 +1,26 @@
 <div class="background">
   <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text border">
+    <div class="heading center-text border banner-colour">
         <h2>Admin Dashboard</h2>
     </div>
   </div>
 </div>
+<div class="about-background">
+  <div class="container">
+    <table class="table topic-card">
+      <thead>
+        <tr>
+          <th class="center-text"> All Users Email</th>
+        </tr>
+      </thead>
 
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th> All Users Email</th>
-        <th>Location</th>
-      </tr>
-    </thead>
-
-    <tbody>
-  		<% @users.each do |user| %>
-  				<tr>
-  	        <td><%= user.email %></td>
-  	      </tr>
-  		<% end %>
-    </tbody>
-  </table>
+      <tbody>
+    		<% @users.each do |user| %>
+    				<tr>
+    	        <td><%= user.email %></td>
+    	      </tr>
+    		<% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

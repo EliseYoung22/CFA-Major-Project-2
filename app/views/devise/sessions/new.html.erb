@@ -1,9 +1,13 @@
-<div class="columns">
-  <div class="column is-half is-offset-one-quarter center-text">
-    <div class="heading border">
-      <h2>Log in</h2>
+<div class="background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border banner-colour">
+        <h2>Log In</h2>
     </div>
-    <div class="border">
+  </div>
+</div>
+<div class="about-background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="center-text border topic-card">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
         <div class="form-group">
           <%= f.label :email %><br />

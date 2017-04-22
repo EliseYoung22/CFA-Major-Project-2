@@ -1,14 +1,15 @@
 <body>
-  <!-- <div class="background"> -->
+  <div class="body">
+    <div class="background">
     <div class="column is-one-third is-offset-one-third">
-      <div class="heading center-text border home-page">
+      <div class="heading center-text border home-page banner-colour">
         <h2>Welcome!</h2>
       </div>
-      <div class="button space button-space">
-        <%= link_to 'Sign Up!', new_user_registration_path %>
+      <div class="button is-large space button-space">
+        <%= link_to 'Sign Up', new_user_registration_path %>
       </div>
-      <div class="button">
-        <%= link_to 'Log In!', user_session_path %>
+      <div class="button is-large">
+        <%= link_to 'Log In', user_session_path %>
       </div>
     </div>
   </div>

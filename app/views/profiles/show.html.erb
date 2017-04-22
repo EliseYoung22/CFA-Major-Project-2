@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
-<div class="column is-one-third is-offset-one-third">
-  <div class="heading center-text border">
+<div class="about-background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border topic-card">
       <%= image_tag @profile.avatar.url(:thumb) %>
       <p>
         <strong>Name:</strong>
@@ -42,6 +43,6 @@
         <%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
        <% end %>
       <%= link_to 'Back', profiles_path %>
-
     </div>
   </div>
+</div>

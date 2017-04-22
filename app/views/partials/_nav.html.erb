@@ -8,10 +8,15 @@
       <a class="nav-item is-tab is-hidden-mobile nav-links" href="/topics">Forum</a>
       <a class="nav-item is-tab is-hidden-mobile nav-links" href="/contact">Contact</a>
       <% if user_signed_in? %>
-      <% if current_user.admin? %>
+        <% if current_user.admin? %>
          <%= link_to 'Admin Dashboard', pages_admin_dashboard_path, class:"nav-item" %>
-         <% end %>
-         <% end%>
+        <% end %>
+      <% end%>
+    </div>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to 'Vouchers', pages_vouchers_path, class:"nav-item" %>
+      <% end%>
     </div>
 
     <div class="nav-right nav-menu">

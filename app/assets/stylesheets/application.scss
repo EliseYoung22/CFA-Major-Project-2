@@ -9,19 +9,19 @@ $primary: white;
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
 
 
-body {
+.body {
   background-color: #738091;
+  background-image: url(asset-path('spikes.jpg'));
   position: fixed;
   height: 100%;
   width: 100%;
 }
 .background {
-  background-color: #738091;
-  // background-image: url(asset-path('orangebackground.png'))
-  margin-bottom: 40px;
+  // background-color: #738091;
+  background-image: url(asset-path('spikes.jpg'));
+  // margin-bottom: 40px;
 }
 .heading {
-  padding-top: 20px;
   color: white;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 30px;
@@ -34,14 +34,15 @@ body {
 .border {
   border: 1px solid white;
   padding: 5px 5px;
-  // margin-bottom: 20px;
   margin-top: 10px;
+  border-radius: 5px;
 }
 
 .border-grey {
   border: 1px solid #4D545C;
   padding: 5px 5px;
   margin-bottom: 20px;
+  border-radius: 15px;
 }
 .table-border {
   border: 1px solid #4D545C;
@@ -60,21 +61,49 @@ body {
 }
 
 .margin-bottom {
-  margin-bottom: 20;
+  margin-bottom: 20px;
 }
 
 .home-page {
-  margin-top: 120px;
+  margin-top: 150px;
 }
 
 .button {
   background-color: #738091;
 }
 .button-space {
-  margin-left: 100px
+  margin-left: 80px
 }
 .nav-links {
   padding-top: 20px;
+  color: white !important;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 20px;
+}
+.nav-item {
+  color: white !important;
+
+}
+.nav {
+  background-color: #738091;
+}
+.banner-colour {
+  background-color: #738091;
+}
+.grey-background {
+  background-color: #738091;
+  height: 100%;
+  width: 100%;
+}
+.footer-colour {
+  background-color: #788AA0;
+}
+.topic-card {
+  background-color: #B4B7C0;
+}
+.about-background {
+  background-color: #738091;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }

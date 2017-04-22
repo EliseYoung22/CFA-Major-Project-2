@@ -1,6 +1,16 @@
-<h1>Editing Topic</h1>
-
-<%= render 'form', topic: @topic %>
-
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+<div class="background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border banner-colour">
+        <h2>Edit Topic</h2>
+    </div>
+  </div>
+</div>
+<div class="about-background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="center-text border topic-card">
+      <%= render 'form', topic: @topic %>
+      <%= link_to 'Show', @topic %> |
+      <%= link_to 'Back', topics_path %>
+    </div>
+  </div>
+</div>

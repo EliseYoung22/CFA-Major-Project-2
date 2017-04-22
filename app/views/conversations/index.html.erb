@@ -1,49 +1,53 @@
 <div class="background">
   <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text border">
+    <div class="heading center-text border banner-colour">
       <h1> Chat</h1>
     </div>
   </div>
 </div>
-
-<div class="column is-one-third is-offset-one-third">
-  <div class="center-text border-grey">
-    <div class="ui segment">
-     <h3>Mailbox</h3>
-     <div class="ui list">
-      <div class="item">
-        <ul>
-       <% @conversations.each do |conversation| %>
-       <li><% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %></li>
-        <li><% if conversation.sender_id == current_user.id %></li>
-        <li><% recipient = User.find(conversation.recipient_id) %></li>
-        <% else %>
-          <% recipient = User.find(conversation.sender_id) %>
-        <% end %>
-        <%= link_to recipient.email,   conversation_messages_path(conversation)%>
-       <% end %>
-      <% end %>
-      </ul>
+<div class="about-background">
+  <div class="container">
+  <div class="column is-one-third is-offset-two-third">
+    <div class="center-text border-grey">
+      <div class="ui segment">
+       <h3 class="heading">inbox</h3>
+       <div class="ui list">
+        <div class="item">
+          <ul>
+           <% @conversations.each do |conversation| %>
+           <li><% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %></li>
+            <li><% if conversation.sender_id == current_user.id %></li>
+            <li><% recipient = User.find(conversation.recipient_id) %></li>
+            <% else %>
+              <% recipient = User.find(conversation.sender_id) %>
+            <% end %>
+            <%= link_to recipient.email,   conversation_messages_path(conversation)%>
+           <% end %>
+          <% end %>
+          </ul>
+        </div>
+       </div>
       </div>
-     </div>
     </div>
   </div>
-</div>
-<div class="column is-one-third is-offset-one-third">
-  <div class="center-text border-grey">
-    <div class="ui segment">
-     <h3>All Users</h3>
-      <div class="ui list">
-       <% @users.each do |user| %>
-        <% if user.id != current_user.id %>
-         <div class="item">
-           <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+
+
+  <div class="column is-4 is-offset-8">
+    <div class="center-text border-grey">
+      <div class="ui segment">
+       <h3 class="heading">All Users</h3>
+        <div class="ui list">
+         <% @users.each do |user| %>
+          <% if user.id != current_user.id %>
+           <div class="item">
+             <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+         </div>
+        <% end %>
+       <% end %>
        </div>
-      <% end %>
-     <% end %>
-     </div>
-    </div>
- </div>
+      </div>
+   </div>
+  </div>
 </div>
 
 <!-- <div class="column is-one-third is-offset-one-third">
