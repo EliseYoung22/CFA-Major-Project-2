@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def index
     @topic = Topic.friendly.find(params[:topic_id])
 
+
     if params[:search]
       @posts = @topic.posts.search(params[:search]).order("created_at DESC")
     else
