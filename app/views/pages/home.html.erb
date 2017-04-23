@@ -5,12 +5,17 @@
       <div class="heading center-text border home-page banner-colour">
         <h2>Welcome!</h2>
       </div>
+      <% if user_signed_in? %>
+      <div class="button is-large forum-button-space">
+        <%= link_to 'Forum', topics_path %>
+      <%else %>
       <div class="button is-large space button-space">
         <%= link_to 'Sign Up', new_user_registration_path %>
       </div>
       <div class="button is-large">
         <%= link_to 'Log In', user_session_path %>
       </div>
+      <% end %>
     </div>
   </div>
 </body>

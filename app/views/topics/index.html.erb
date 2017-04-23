@@ -42,3 +42,64 @@
     </div>
   </div>
 </body>
+
+<div class="grey-background">
+  <div class="container">
+    <div class="columns is-multiline">
+       <div class="column is-one-third">
+         <div class="card is-one-third">
+              <div class="card">
+                <div class="card-image banner-colour">
+                  <figure class="image is-3by3">
+                    <img src="/assets/movie.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="card-content topic-card">
+                  <div class="media">
+                    <div class="media-left">
+                    </div>
+                    <div class="media-content">
+                      <p class="center-text is-4">Books</p>
+                    </div>
+                  </div>
+                  <div class="content card-footer">
+                    <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
+                      <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                      <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="column is-one-third">
+            <div class="card is-one-third">
+                 <div class="card">
+                   <div class="card-image banner-colour">
+                     <figure class="image is-4by4">
+                       <img src="/assets/movie.png" alt="Image">
+                     </figure>
+                   </div>
+                   <div class="card-content topic-card">
+                     <div class="media">
+                       <div class="media-left">
+                         <figure class="image is-48x48">
+                         </figure>
+                       </div>
+                       <div class="media-content">
+                         <p class="title center-text is-4">Books</p>
+                       </div>
+                     </div>
+                     <div class="content card-footer footer-colour border">
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                       Phasellus nec iaculis mauris.
+                       <br>
+                       <%= link_to 'Show', topic_posts_path(@topics), class: "space" %>
+                         <%= link_to 'Edit', edit_topic_path(@topics), class: "space"%>
+                         <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+        </div>
+      </div>
