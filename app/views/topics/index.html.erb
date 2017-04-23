@@ -73,7 +73,7 @@
           <div class="card">
             <div class="card-image banner-colour">
               <figure class="image is-3by3">
-                <img src="/assets/hobbies.png" alt="Image">
+                <img src="/assets/games.png" alt="Image">
               </figure>
             </div>
             <div class="card-content topic-card">
@@ -92,6 +92,28 @@
             </div>
           </div>
         </div>
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image banner-colour">
+              <figure class="image is-3by3">
+                <img src="/assets/headphones.png" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content topic-card">
+              <div class="media">
+                <div class="media-left">
+                </div>
+                <div class="media-content">
+                  <p class="center-text is-4">Movies</p>
+                </div>
+              </div>
+              <div class="content card-footer">
+                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
+                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
