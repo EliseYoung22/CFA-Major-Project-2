@@ -10,8 +10,9 @@ $primary: white;
 
 
 .body {
-  background-color:#00E5C2;
-  // opacity: 0.7;
+  // background-color:#00E5C2;
+  // opacity: 0.8;
+  background-image: linear-gradient(to bottom, white,#00E5C2 );
   // background-image: url(asset-path('spikes.jpg'));
   position: fixed;
   height: 100%;
@@ -26,7 +27,7 @@ $primary: white;
   color: #776B9A;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 50px;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 .center-text {
@@ -84,7 +85,7 @@ $primary: white;
   color: #2E3435 !important;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 20px;
-  font-weight: bold;
+  // font-weight: bold;
 }
 .nav-item {
   color: #2E3435 !important;
@@ -92,6 +93,7 @@ $primary: white;
 }
 .nav {
   background-color: white;
+  opacity: 0.8;
 }
 .banner-colour {
   background-color: #738091;
