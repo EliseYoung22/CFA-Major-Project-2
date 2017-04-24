@@ -17,9 +17,17 @@ class ContactController < ApplicationController
       end
     end
   end
+  #
+  # def help_request
+  #   if params[:contact]
+  #     email =  params[:contact][:email]
+  #   ContactMailer.help_request_email(current_user.email).deliver_now
+  #   redirect_to '/pages/home'
+  #   end
+  # end
 
   def help_request
-    ContactMailer.help_request_email(current_user.email).deliver_now
-    redirect_to '/pages/home'
+    ContactMailer.help_request(current_user.email).deliver_now
+    redirect_to '/conversations'
   end
 end

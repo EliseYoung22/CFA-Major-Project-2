@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default from: 'aljosa@hotmail.com'
+  default from: 'caring@caring.com'
 
   def send_contact_email(email, message)
     @email = email
@@ -13,8 +13,8 @@ class ContactMailer < ApplicationMailer
   def help_request(email)
     @email = email
     mail(to: 'eliseyoung_4@hotmail.com', subject: 'New help request') do |format|
-      format.html { render 'help_request_email' }
-      format.text { render 'help_request_email' }
+      format.html { render 'help_request' }
+      format.text { render 'help_request' }
     end
   end
 end

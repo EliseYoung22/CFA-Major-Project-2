@@ -13,7 +13,8 @@ resources :conversations do
   get 'contact', to:"contact#index"
   post 'contact', to:"contact#mail"
 
-  post 'request', to:"contact#help_request"
+  # get 'professional_request', to:"contact#index"
+  post 'professional_request', to:"contact#help_request"
 
   root 'pages#home'
 
@@ -23,7 +24,7 @@ resources :conversations do
 
   get 'pages/chat'
 
-  get 'pages/professional_request'
+  # get 'pages/professional_request'
 
   get 'pages/vouchers'
 
