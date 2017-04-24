@@ -18,37 +18,39 @@
 <div class="grey-background">
   <div class="container">
     <div class="columns is-multiline">
-    <% @profiles.each do |profile| %>
-        <div class="column is-one-third ">
-          <div class="card is-one-third  border-grey topic-card">
-            <div class="card-content">
-              <p class="title center-text">
-                <ul>
-                  <li class="center-text"><%= image_tag profile.avatar.url(:thumb) %></li>
-                  <li class="center-text">Name:<%= profile.name %></li>
-                </ul>
-              </p>
-              <p class="subtitle center-text">
-                <ul>
-                  <li>Username:<%= profile.username%></li>
-                  <li>Age:<%= profile.age %></li>
-                  <li>Gender:<%= profile.gender %></li>
-                  <li>Location:<%= profile.city %></li>
-                  <li>Bio:<%= profile.bio %></li>
-                  <li>Interests:<%= profile.interests %></li>
-                </ul>
-              </p>
-              <footer class="card-footer footer-colour border">
-                <p class="card-footer-item">
-                <%= link_to 'Show', profile %>
-                <% if policy(profile).update? %>
-                  <%= link_to 'Edit', edit_profile_path(@profile)%>
-                  <%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </p>
+        <% @profiles.each do |profile| %>
+          <div class="column is-one-third ">
+            <div class="card is-one-third  border-grey topic-card">
+              <div class="card-content">
+                <p class="title center-text">
+                  <ul>
+                    <li class="center-text"><%= image_tag profile.avatar.url(:thumb) %></li>
+                    <li class="center-text">Name:<%= profile.name %></li>
+                  </ul>
+                </p>
+                <p class="subtitle center-text">
+                  <ul>
+                    <li>Username:<%= profile.username%></li>
+                    <li>Age:<%= profile.age %></li>
+                    <li>Gender:<%= profile.gender %></li>
+                    <li>Location:<%= profile.city %></li>
+                    <li>Bio:<%= profile.bio %></li>
+                    <li>Interests:<%= profile.interests %></li>
+                  </ul>
+                </p>
+                <footer class="card-footer footer-colour border">
+                  <p class="card-footer-item">
+                  <%= link_to 'Show', profile %>
+                  <% if policy(profile).update? %>
+                    <%= link_to 'Edit', edit_profile_path(@profile)%>
+                    <%= link_to 'Delete', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-    <% end %>
+        <% end %>
+      <%= link_to 'New', new_profile_path %>
+    </div>
   </div>
 </body>

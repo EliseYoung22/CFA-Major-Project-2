@@ -7,7 +7,7 @@
   </div>
 </div>
 
-<!-- <body>
+<body>
   <div class="grey-background">
     <div class="container">
       <div class="columns is-multiline">
@@ -39,7 +39,7 @@
       <%= link_to 'New Topic', new_topic_path if current_user.admin? %>
     </div>
   </div>
-</body> -->
+</body>
 
 <div class="grey-background">
   <div class="container">
@@ -60,9 +60,13 @@
                 </div>
               </div>
               <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics, @post ), class: "space topic-links" %>
-                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
+                <% if policy(@topics).update? %>
+                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <% end %>
+                <% if policy(@topics).destroy? %>
+                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -84,8 +88,12 @@
               </div>
               <div class="content card-footer">
                 <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if policy(@topics).update? %>
+                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <% end %>
+                <% if policy(@topics).destroy? %>
+                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -107,8 +115,12 @@
               </div>
               <div class="content card-footer">
                 <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if policy(@topics).update? %>
+                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <% end %>
+                <% if policy(@topics).destroy? %>
+                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -130,8 +142,12 @@
               </div>
               <div class="content card-footer">
                 <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if policy(@topics).update? %>
+                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <% end %>
+                <% if policy(@topics).destroy? %>
+                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -153,8 +169,12 @@
               </div>
               <div class="content card-footer">
                 <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if policy(@topics).update? %>
+                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <% end %>
+                <% if policy(@topics).destroy? %>
+                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -176,8 +196,12 @@
               </div>
               <div class="content card-footer">
                 <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% if policy(@topics).update? %>
+                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
+                <% end %>
+                <% if policy(@topics).destroy? %>
+                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>
               </div>
             </div>
           </div>
