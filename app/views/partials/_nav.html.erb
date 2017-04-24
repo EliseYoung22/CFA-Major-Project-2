@@ -1,4 +1,4 @@
-<nav class="nav has-shadow">
+<nav class="nav">
   <div class="container">
     <div class="nav-left">
       <a class="nav-item" href="/users/sign_in">
@@ -9,22 +9,20 @@
       <a class="nav-item is-tab is-hidden-mobile nav-links" href="/contact">Contact</a>
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-         <%= link_to 'Admin Dashboard', pages_admin_dashboard_path, class:"nav-item" %>
+         <%= link_to 'Admin Dashboard', pages_admin_dashboard_path, class:"nav-item is-tab is-hidden-mobile nav-links" %>
         <% end %>
       <% end%>
+      <div>
     </div>
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to 'Vouchers', pages_vouchers_path, class:"nav-item" %>
-      <% end%>
-    </div>
-
     <div class="nav-right nav-menu">
       <a class="nav-item is-tab">
         <a class="nav-item is-tab is-hidden-mobile nav-links" href="/conversations">Chat</a>
-
         <a class="nav-item is-tab is-hidden-mobile nav-links" href="/profiles">Profile</a>
-        <!-- <a><%= link_to('Profile', profiles_path) %></a> -->
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to 'Vouchers', pages_vouchers_path, class:"nav-item is-tab is-hidden-mobile nav-links" %>
+          <% end%>
+        </div>
         <% if user_signed_in? %>
         <%= link_to "Logout: #{current_user.email}", destroy_user_session_path, :method => :delete, class:"nav-item" %>
         <% else %>

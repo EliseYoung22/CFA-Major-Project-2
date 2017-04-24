@@ -11,23 +11,25 @@ $primary: white;
 
 .body {
   // background-color:#00E5C2;
+  background-color:#7FF2E0;
+
   // opacity: 0.8;
-  background-image: linear-gradient(to bottom, white,#00E5C2 );
+  // background-image: linear-gradient(to bottom, white,#00E5C2 );
   // background-image: url(asset-path('spikes.jpg'));
   position: fixed;
   height: 100%;
   width: 100%;
 }
 .background {
-  // background-color: #738091;
+  background-color: #7FF2E0;
   // background-image: url(asset-path('spikes.jpg'));
   // margin-bottom: 40px;
 }
 .heading {
-  color: #776B9A;
+  color:#225056;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 50px;
-  // font-weight: bold;
+  font-weight: bold;
 }
 
 .center-text {
@@ -72,7 +74,9 @@ $primary: white;
 }
 
 .button {
-  background-color: #00E5C2;
+  background-color: #7FF2E0;
+  color: #2E3435 !important;
+  border: #225056 !important;
 }
 .button-space {
   margin-left: 80px
@@ -88,18 +92,18 @@ $primary: white;
   // font-weight: bold;
 }
 .nav-item {
-  color: #2E3435 !important;
+  color: #225056 !important;
 
 }
 .nav {
-  background-color: white;
-  opacity: 0.8;
+  background-color: #7FF2E0;
+  // opacity: 0.8;
 }
 .banner-colour {
-  background-color: #738091;
+  background-color: #7FF2E0;
 }
 .grey-background {
-  background-color:  #00E5C2;
+  background-color:  #7FF2E0;
   height: 100%;
   width: 100%;
 }
@@ -107,10 +111,10 @@ $primary: white;
   background-color: #788AA0;
 }
 .topic-card {
-  background-color: #00E5C2;
+  background-color: #7FF2E0;
 }
 .about-background {
-  background-color: #00E5C2;
+  background-color: #7FF2E0;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -124,4 +128,13 @@ $primary: white;
 }
 .topic-links {
   margin-left: 30px;
+}
+.border-box {
+  border: 6px solid #225056;
+}
+a {
+  color: #225056;
+}
+.card {
+  box-shadow: none;
 }

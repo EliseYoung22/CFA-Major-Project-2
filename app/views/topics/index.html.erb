@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 <div class="background">
   <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text">
+    <div class="heading border-box center-text">
         <h2>Topics</h2>
     </div>
   </div>
 </div>
 
 <body>
-  <div class="body">
+  <div class="background">
     <div class="container">
       <div class="columns is-multiline">
        <% @topics.each do |topic| %>
@@ -19,7 +19,7 @@
                   <%= image_tag topic.cover_art.url(:medium) %>
                 </figure>
               </div>
-              <div class="card-content topic-card">
+              <div class="card-content banner-colour">
                 <div class="media">
                   <div class="media-left">
                   </div>
