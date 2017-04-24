@@ -10,21 +10,23 @@ $primary: white;
 
 
 .body {
-  background-color: #4D9591;
-  background-image: url(asset-path('spikes.jpg'));
+  background-color:#00E5C2;
+  // opacity: 0.7;
+  // background-image: url(asset-path('spikes.jpg'));
   position: fixed;
   height: 100%;
   width: 100%;
 }
 .background {
   // background-color: #738091;
-  background-image: url(asset-path('spikes.jpg'));
+  // background-image: url(asset-path('spikes.jpg'));
   // margin-bottom: 40px;
 }
 .heading {
-  color: white;
+  color: #776B9A;
   font-family: 'Didact Gothic', sans-serif;
-  font-size: 30px;
+  font-size: 50px;
+  font-weight: bold;
 }
 
 .center-text {
@@ -32,7 +34,7 @@ $primary: white;
 }
 
 .border {
-  border: 1px solid white;
+  border: 1px solid #776B9A;
   padding: 5px 5px;
   margin-top: 10px;
   border-radius: 2px;
@@ -69,7 +71,7 @@ $primary: white;
 }
 
 .button {
-  background-color: #4D9591;
+  background-color: #00E5C2;
 }
 .button-space {
   margin-left: 80px
@@ -82,19 +84,20 @@ $primary: white;
   color: #2E3435 !important;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 20px;
+  font-weight: bold;
 }
 .nav-item {
-  color: white !important;
+  color: #2E3435 !important;
 
 }
 .nav {
-  background-color: #4D9591;
+  background-color: white;
 }
 .banner-colour {
-  background-color:#4D9591;
+  background-color: #738091;
 }
 .grey-background {
-  background-color: #4D9591;
+  background-color:  #00E5C2;
   height: 100%;
   width: 100%;
 }
@@ -102,10 +105,10 @@ $primary: white;
   background-color: #788AA0;
 }
 .topic-card {
-  background-color: #4D9591;
+  background-color: #00E5C2;
 }
 .about-background {
-  background-color: #4D9591;
+  background-color: #00E5C2;
   position: fixed;
   height: 100%;
   width: 100%;
