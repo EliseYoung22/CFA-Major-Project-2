@@ -5,15 +5,14 @@ Rails.application.routes.draw do
     end
   end
 
-resources :conversations do
-  resources :messages
- end
+  resources :conversations do
+    resources :messages
+  end
 
 
   get 'contact', to:"contact#index"
   post 'contact', to:"contact#mail"
 
-  # get 'professional_request', to:"contact#index"
   post 'professional_request', to:"contact#help_request"
 
   root 'pages#home'
@@ -24,8 +23,6 @@ resources :conversations do
 
   get 'pages/chat'
 
-  # get 'pages/professional_request'
-
   get 'pages/vouchers'
 
   get 'pages/admin_dashboard'
@@ -33,6 +30,9 @@ resources :conversations do
 
   resources :profiles
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  get 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+  get 'users/:id' => 'users#show', as: :user
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

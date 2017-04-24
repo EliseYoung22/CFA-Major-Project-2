@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :posts
   has_many :comments
 
@@ -29,7 +29,7 @@ class User < ApplicationRecord
       end
     end
   end
-  
+
   after_create :assign_default_role
 
   def assign_default_role
