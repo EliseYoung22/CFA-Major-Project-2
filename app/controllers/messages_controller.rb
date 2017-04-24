@@ -29,9 +29,17 @@ class MessagesController < ApplicationController
     redirect_to conversation_messages_path(@conversation)
    end
   end
-  
+
   private
    def message_params
     params.require(:message).permit(:body, :user_id)
    end
+
+  def destroy
+    @message.destroy
+    respond_to do |format|
+      format.html { redirect_to conversation_messages_path, notice: 'Post was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 end

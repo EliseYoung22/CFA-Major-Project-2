@@ -23,6 +23,8 @@
              <div class="item">
               <i class="right triangle icon"></i>
                <%= message.body %>
+               <%= link_to 'Delete', conversation_message_path(@conversation, message), method: :delete, data: { confirm: 'Are you sure?' } %>
+
             </div>
           </div>
          </div>

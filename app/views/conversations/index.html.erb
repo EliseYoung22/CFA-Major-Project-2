@@ -17,12 +17,14 @@
               <ul>
                <% @conversations.each do |conversation| %>
                <li><% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %></li>
-                <li><% if conversation.sender_id == current_user.id %></li>
-                <li><% recipient = User.find(conversation.recipient_id) %></li>
-                <% else %>
-                  <% recipient = User.find(conversation.sender_id) %>
+                <% if conversation.messages.any? %>
+                  <li><% if conversation.sender_id == current_user.id %></li>
+                    <li><% recipient = User.find(conversation.recipient_id) %></li>
+                  <% else %>
+                    <% recipient = User.find(conversation.sender_id) %>
+                  <% end %>
+                  <%= link_to recipient.email,   conversation_messages_path(conversation)%>
                 <% end %>
-                <%= link_to recipient.email,   conversation_messages_path(conversation)%>
                <% end %>
               <% end %>
               </ul>

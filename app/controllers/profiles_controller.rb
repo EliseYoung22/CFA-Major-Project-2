@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
       @profile = Profile.search(params[:search]).order("created_at DESC")
      else
       @profile = Profile.all.order('created_at DESC')
-    end
+     end
 
   end
 
@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    # @profile = current_user.profile.find(params[:id])
+    @profile = current_user.profile.find(params[:id])
   end
 
   # POST /profiles
