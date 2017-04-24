@@ -18,9 +18,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    # @profile = current_user.profile
-    @profile = Profile.find(params[:id])
-
   end
 
   # GET /profiles/new
@@ -31,7 +28,6 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    @profile = current_user.profile.find(params[:id])
   end
 
   # POST /profiles
@@ -55,7 +51,6 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     authorize @profile
-    @profile = current_user.profile.find(params[:id])
     respond_to do |format|
       if @profile.update(profile_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }

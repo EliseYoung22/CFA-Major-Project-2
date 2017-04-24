@@ -13,200 +13,35 @@
       <div class="columns is-multiline">
        <% @topics.each do |topic| %>
          <div class="column is-one-third">
-           <div class="card is-one-third border-grey topic-card">
-             <div class="card-content">
-               <p class="title center-text">
-                  <%= topic.name %>
-                <p class="subtitle center-text">
-                  <%= topic.image %>
-                </p>
+            <div class="card">
+              <div class="card-image banner-colour">
+                <figure class="image is-3by3">
+                  <%= image_tag topic.cover_art.url(:medium) %>
+                </figure>
               </div>
-              <footer class="card-footer footer-colour border">
-                <p class="card-footer-item">
-                  <%= link_to 'Show', topic_posts_path(topic), class: "space" %>
+              <div class="card-content topic-card">
+                <div class="media">
+                  <div class="media-left">
+                  </div>
+                  <div class="media-content">
+                    <p class="center-text is-4 heading"><%= topic.name %></p>
+                  </div>
+                </div>
+                <div class="content card-footer">
+                  <%= link_to 'Show', topic_posts_path(topic), class: "space topic-links" %>
                   <% if policy(topic).update? %>
-                    <%= link_to 'Edit', edit_topic_path(topic), class: "space"%>
+                    <%= link_to 'Edit', edit_topic_path(topic), class: "space topic-links"%>
                   <% end %>
                   <% if policy(topic).destroy? %>
                     <%= link_to 'Delete', topic_path(topic), method: :delete, data: { confirm: 'Are you sure?' } %>
                   <% end %>
-                </p>
-              </footer>
-           </div>
-         </div>
+                </div>
+              </div>
+            </div>
+          </div>
        <% end %>
       </div>
       <%= link_to 'New Topic', new_topic_path if current_user.admin? %>
     </div>
   </div>
 </body>
-
-<div class="grey-background">
-  <div class="container">
-    <div class="columns is-multiline">
-       <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image banner-colour">
-              <figure class="image is-3by3">
-                <img src="/assets/movie.png" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content topic-card">
-              <div class="media">
-                <div class="media-left">
-                </div>
-                <div class="media-content">
-                  <p class="center-text is-4 heading">Movies</p>
-                </div>
-              </div>
-              <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <% if policy(@topics).update? %>
-                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <% end %>
-                <% if policy(@topics).destroy? %>
-                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image banner-colour">
-              <figure class="image is-3by3">
-                <img src="/assets/games.png" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content topic-card">
-              <div class="media">
-                <div class="media-left">
-                </div>
-                <div class="media-content">
-                  <p class="center-text is-4 heading">Games</p>
-                </div>
-              </div>
-              <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <% if policy(@topics).update? %>
-                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <% end %>
-                <% if policy(@topics).destroy? %>
-                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image banner-colour">
-              <figure class="image is-3by3">
-                <img src="/assets/headphones.png" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content topic-card">
-              <div class="media">
-                <div class="media-left">
-                </div>
-                <div class="media-content">
-                  <p class="center-text is-4 heading">Music</p>
-                </div>
-              </div>
-              <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <% if policy(@topics).update? %>
-                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <% end %>
-                <% if policy(@topics).destroy? %>
-                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image banner-colour">
-              <figure class="image is-3by3">
-                <img src="/assets/sport.png" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content topic-card">
-              <div class="media">
-                <div class="media-left">
-                </div>
-                <div class="media-content">
-                  <p class="center-text is-4 heading">Sports</p>
-                </div>
-              </div>
-              <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <% if policy(@topics).update? %>
-                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <% end %>
-                <% if policy(@topics).destroy? %>
-                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image banner-colour">
-              <figure class="image is-3by3">
-                <img src="/assets/food.png" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content topic-card">
-              <div class="media">
-                <div class="media-left">
-                </div>
-                <div class="media-content">
-                  <p class="center-text is-4 heading">Food</p>
-                </div>
-              </div>
-              <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <% if policy(@topics).update? %>
-                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <% end %>
-                <% if policy(@topics).destroy? %>
-                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="column is-one-third">
-          <div class="card">
-            <div class="card-image banner-colour">
-              <figure class="image is-3by3">
-                <img src="/assets/infinity.png" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content topic-card">
-              <div class="media">
-                <div class="media-left">
-                </div>
-                <div class="media-content">
-                  <p class="center-text is-4 heading">Random</p>
-                </div>
-              </div>
-              <div class="content card-footer">
-                <%= link_to 'Show', topic_posts_path(@topics), class: "space topic-links" %>
-                <% if policy(@topics).update? %>
-                  <%= link_to 'Edit', edit_topic_path(@topics), class: "space topic-links"%>
-                <% end %>
-                <% if policy(@topics).destroy? %>
-                  <%= link_to 'Delete', topic_path(@topics), method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

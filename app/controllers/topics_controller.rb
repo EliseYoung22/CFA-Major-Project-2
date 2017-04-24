@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order(:name)
   end
 
   # GET /topics/1
@@ -72,6 +72,6 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:name, :description, :image, :slug)
+      params.require(:topic).permit(:name, :description, :image, :slug, :cover_art)
     end
 end
