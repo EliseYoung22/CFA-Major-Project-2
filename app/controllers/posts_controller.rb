@@ -7,12 +7,14 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @topic = Topic.friendly.find(params[:topic_id])
-
-    if params[:search]
-      @posts = @topic.posts.search(params[:search]).order("created_at DESC")
-    else
-      @posts = @topic.posts.order('created_at DESC')
-    end
+    @posts = @topic.posts
+    # if params[:search]
+    #   @posts = @topic.posts.search(params[:search]).order("created_at DESC")
+    # else
+    #   @posts = @topic.posts.order('created_at DESC')
+    # end
+    # @q = Post.ransack(params[:q])
+    # @posts = @q.result(distinct: true)
   end
 
   # GET /posts/1
@@ -87,12 +89,7 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.friendly.find(params[:id])
       @topic = Topic.friendly.find(params[:topic_id])
-
     end
-    #
-    # def set_current_user
-    #    @user = current_user
-    #  end
 
 
     # Never trust parameters from the scary internet, only allow the white list through.
