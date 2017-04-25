@@ -1,7 +1,7 @@
 # Care For Caring
 
 ##### About
-Care for Caring is an online forum for youth who are in the position where they have become the main carer for their parents have somewhere to go and talk to a professionl or other people in a similar situaution. This project was created for our second major project at Coder Factory Academy. The project brief was to create a two sided platform and app to pitch to one of these three people with a related topic:
+Care for Caring is an online forum for youth who are in the position where they have become the main carer for their parents have somewhere to go and talk to a professional or other people in a similar situation. This project was created for our second major project at Coder Factory Academy. The project brief was to create a two sided platform and app to pitch to one of these three people with a related topic:
 - Barack Obama (politics)
 - Rupert Murdoch (journalism)
 - Bill & Melinda Gates (social causes/global development)
@@ -25,8 +25,9 @@ Care for Caring is an online forum for youth who are in the position where they 
 * The core functionality of your application needs to be tested with Rspec.
 
 ### Ideation Process
-When presented with this project I immediately knew I wanted to focus on a social cause. Care for Caring had been a previous idea of mine that never made it to the development process so I though now would be a good time to do it. There was a lot of planning involved before I started any coding and I found myself drawing many, many wire fames and maps for how I wanted the site to flow. I also found it very helpful to map out by basic database on paper before I started to contruct anything.
-![](https://www.dropbox.com/s/x5ylpvgdj23cfru/20170425_181342.jpg?dl=0)
+When presented with this project I immediately knew I wanted to focus on a social cause. Care for Caring had been a previous idea of mine that never made it to the development process so I though now would be a good time to do it. There was a lot of planning involved before I started any coding and I found myself drawing many, many wire fames and maps for how I wanted the site to flow. I also found it very helpful to map out by basic database on paper before I started to construct anything.
+![Image alt test](https://www.dropbox.com/s/u9t55jrr7zzm0gd/Screen%20Shot%202017-04-25%20at%207.31.14%20PM.png?dl=0)
+
 ## Getting Started
 #### Install
 - Clone the repo
@@ -47,5 +48,3 @@ $ rake db:migrate
 $ rails s
 ```
 - Proceed to localhost:3000
-
- 
