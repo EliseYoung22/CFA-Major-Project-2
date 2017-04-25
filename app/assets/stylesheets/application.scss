@@ -7,6 +7,7 @@ $primary: white;
 @import "bulma";
 @import "pages";
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 
 .body {
@@ -136,5 +137,6 @@ a {
   font-size: 30px;
 }
 .logo {
-  font-size: 18px;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
 }
