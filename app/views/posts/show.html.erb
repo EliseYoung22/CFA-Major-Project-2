@@ -27,8 +27,10 @@
      <div class="border topic-card">
         <p><%= comment.user.email %></p>
         <p><%= comment.content %></p>
-        <td><%= link_to 'Edit', edit_topic_post_comment_path(@topic, @post, comment) %></td>
-        <td><%= link_to 'Destroy',topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if policy(comment).update? %>
+          <%= link_to 'Edit', edit_topic_post_comment_path(@topic, @post, comment)%>
+          <%= link_to 'Delete', topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
      <% end %>
    </div>

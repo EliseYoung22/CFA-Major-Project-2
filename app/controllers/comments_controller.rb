@@ -46,6 +46,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1.json
   def update
     @post = Post.friendly.find(params[:post_id])
+    authorize @comment
 
     respond_to do |format|
       if @comment.update(comment_params)
@@ -62,6 +63,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @post = Post.friendly.find(params[:post_id])
+    authorize @comment
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Comment was successfully destroyed.' }

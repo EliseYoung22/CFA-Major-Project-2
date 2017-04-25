@@ -27,7 +27,7 @@
             <% if policy(post).update? %>
               <%= link_to 'Edit', edit_topic_post_path(post.topic, post)%>
               <%= link_to 'Delete', topic_post_path(post.topic, post), method: :delete, data: { confirm: 'Are you sure?' } %>
-             <% end %>
+            <% end %>
           </ul>
         <% end %>
       </tbody>
