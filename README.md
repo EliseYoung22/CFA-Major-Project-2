@@ -27,19 +27,21 @@ Care for Caring is an online forum for youth who are in the position where they 
 ### Ideation Process
 When presented with this project I immediately knew I wanted to focus on a social cause. Care for Caring had been a previous idea of mine that never made it to the development process so I though now would be a good time to do it. There was a lot of planning involved before I started any coding and I found myself drawing many, many wire fames and maps for how I wanted the site to flow. I also found it very helpful to map out by basic database on paper before I started to construct anything.
 ##### Entity Relationship Diagram
-![erd.png](https://www.dropbox.com/s/u9t55jrr7zzm0gd/erd.png?dl=0)
+![erd](https://cloud.githubusercontent.com/assets/25731474/25410294/242b0bfc-2a59-11e7-84ed-66bd127330c1.png)
+
 ##### User flow
-![userfloe.jpg](https://www.dropbox.com/s/nkcbkmmpyju8r1m/userfloe.jpg?dl=0)
+![userfloe](https://cloud.githubusercontent.com/assets/25731474/25410342/6b172df2-2a59-11e7-8fdd-a48f0852b098.jpg)
 ##### Wireframes
-![wire1.jpg](https://www.dropbox.com/s/tkgj1yd8uupnkfg/wire1.jpg?dl=0)
-![wire2.jpg](https://www.dropbox.com/s/j375wvpfyron8zo/wire2.jpg?dl=0)
+![wire1](https://cloud.githubusercontent.com/assets/25731474/25410339/6b143aca-2a59-11e7-9d84-2610aebed00a.jpg)
+![wire2](https://cloud.githubusercontent.com/assets/25731474/25410340/6b1673b2-2a59-11e7-99be-2ecd76ac7740.jpg)
 
 ##### Database Maps
-![db.jpg](https://www.dropbox.com/s/bmspvxlzwgcb4sj/db.jpg?dl=0)
-![databasemap.jpg](https://www.dropbox.com/s/3wi4qbcb01up8u5/databasemap.jpg?dl=0)
+![db](https://cloud.githubusercontent.com/assets/25731474/25410331/656b10e4-2a59-11e7-8f02-abec0af3d5a1.jpg)
+![databasemap](https://cloud.githubusercontent.com/assets/25731474/25410324/61e49c60-2a59-11e7-82aa-4602ad8d9f37.jpg)
+
 ##### Trello
-![trello1.png](https://www.dropbox.com/s/jpzq6xcuga7dksq/trello1.png?dl=0)
-![trello2.png](https://www.dropbox.com/s/4dn8bkl2n4eem9k/trello2.png?dl=0)
+![trello1](https://cloud.githubusercontent.com/assets/25731474/25410337/6ab047b8-2a59-11e7-8c12-f54ab00d9ffd.png)
+![trello2](https://cloud.githubusercontent.com/assets/25731474/25410338/6adf5f80-2a59-11e7-809d-14ba95d2c57e.png)
 
 
 ## Getting Started
