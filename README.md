@@ -26,7 +26,20 @@ Care for Caring is an online forum for youth who are in the position where they 
 
 ### Ideation Process
 When presented with this project I immediately knew I wanted to focus on a social cause. Care for Caring had been a previous idea of mine that never made it to the development process so I though now would be a good time to do it. There was a lot of planning involved before I started any coding and I found myself drawing many, many wire fames and maps for how I wanted the site to flow. I also found it very helpful to map out by basic database on paper before I started to construct anything.
+##### Entity Relationship Diagram
 ![erd.png](https://www.dropbox.com/s/u9t55jrr7zzm0gd/erd.png?dl=0)
+##### User flow
+![userfloe.jpg](https://www.dropbox.com/s/nkcbkmmpyju8r1m/userfloe.jpg?dl=0)
+##### Wireframes
+![wire1.jpg](https://www.dropbox.com/s/tkgj1yd8uupnkfg/wire1.jpg?dl=0)
+![wire2.jpg](https://www.dropbox.com/s/j375wvpfyron8zo/wire2.jpg?dl=0)
+
+##### Database Maps
+![db.jpg](https://www.dropbox.com/s/bmspvxlzwgcb4sj/db.jpg?dl=0)
+![databasemap.jpg](https://www.dropbox.com/s/3wi4qbcb01up8u5/databasemap.jpg?dl=0)
+##### Trello
+![trello1.png](https://www.dropbox.com/s/jpzq6xcuga7dksq/trello1.png?dl=0)
+![trello2.png](https://www.dropbox.com/s/4dn8bkl2n4eem9k/trello2.png?dl=0)
 
 
 ## Getting Started
