@@ -28,7 +28,17 @@ Care for Caring is an online forum for youth who are in the position where they 
 When presented with this project I immediately knew I wanted to focus on a social cause. Care for Caring had been a previous idea of mine that never made it to the development process so I though now would be a good time to do it. There was a lot of planning involved before I started any coding and I found myself drawing many, many wire fames and maps for how I wanted the site to flow. I also found it very helpful to map out by basic database on paper before I started to construct anything.
 ![erd.png](https://www.dropbox.com/s/u9t55jrr7zzm0gd/erd.png?dl=0)
 
+
 ## Getting Started
+| Gems Used | |
+| ------ | ------ |
+| Devise | Ransack |
+| Bulma-rails |Paperclip-cloudinary |
+| Omniauth-facebook | Rolify |
+| Papaerclip | Pundit |
+| Simple-form |  Omniauth-facebook |
+| Friendly-id|  |
+
 #### Install
 - Clone the repo
 ```sh
