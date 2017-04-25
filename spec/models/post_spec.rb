@@ -16,5 +16,10 @@ RSpec.describe Post, type: :model do
     post = Post.create(:title => "a")
     expect(post).to_not be_valid
   end
-  
+
+  it "post requires title of atleast 2 characters" do
+    post = Post.create(:title => "ab")
+    expect(post).to be_valid
+  end
+
 end
