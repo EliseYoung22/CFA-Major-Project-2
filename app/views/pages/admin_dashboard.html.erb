@@ -5,22 +5,20 @@
     </div>
   </div>
 </div>
-<div class="grey-background">
+<div class="white-body">
   <div class="container">
-    <table class="table topic-card">
+    <table class="table">
       <thead>
         <tr>
           <th class="center-text"> All Users Email</th>
         </tr>
       </thead>
-
       <tbody>
     		<% @users.each do |user| %>
-    				<tr>
-    	        <td><%= user.email %></td>
-              <td><%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %></td>
-
-    	      </tr>
+    			<tr>
+  	        <td><%= user.email %></td>
+            <td><%= link_to "Destroy", admin_destroy_user_path(user), method: :delete, data: { confirm: "You sure?" } %></td>
+    	     </tr>
     		<% end %>
       </tbody>
     </table>

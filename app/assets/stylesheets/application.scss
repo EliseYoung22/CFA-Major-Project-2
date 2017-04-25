@@ -10,20 +10,13 @@ $primary: white;
 
 
 .body {
-  // background-color:#00E5C2;
   background-color:#7FF2E0;
-
-  // opacity: 0.8;
-  // background-image: linear-gradient(to bottom, white,#00E5C2 );
-  // background-image: url(asset-path('spikes.jpg'));
   position: fixed;
   height: 100%;
   width: 100%;
 }
 .background {
   background-color: #7FF2E0;
-  // background-image: url(asset-path('spikes.jpg'));
-  // margin-bottom: 40px;
 }
 .heading {
   color:#225056;
@@ -137,4 +130,7 @@ a {
 }
 .card {
   box-shadow: none;
+}
+.white-body {
+  background-color: white;
 }
