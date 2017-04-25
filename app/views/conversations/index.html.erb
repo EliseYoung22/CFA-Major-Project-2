@@ -19,9 +19,9 @@
                <li><% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %></li>
                 <% if conversation.messages.any? %>
                   <li><% if conversation.sender_id == current_user.id %></li>
-                    <li><% recipient = User.find(conversation.recipient_id) %></li>
+                  <li><% recipient = User.find(conversation.recipient_id) %></li>
                   <% else %>
-                    <% recipient = User.find(conversation.sender_id) %>
+                  <% recipient = User.find(conversation.sender_id) %>
                   <% end %>
                   <%= link_to recipient.email,   conversation_messages_path(conversation)%>
                 <% end %>
@@ -42,9 +42,9 @@
               <% if user.id != current_user.id %>
                <div class="item">
                  <%= user.email %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-             </div>
+               </div>
+             <% end %>
             <% end %>
-           <% end %>
            </div>
           </div>
        </div>

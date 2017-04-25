@@ -19,18 +19,16 @@
     <div class="center-text border black-text">
      <h1>Want to get involved or know how you can help? Send us a message!</h1>
     </div>
-    </div>
-      <div class="column is-one-third is-offset-one-third">
-        <div class="center-text border-grey">
-          <ul>
-            <%= simple_form_for :contact do |f| %>
-            <li class="padding"><%= f.input :email, placeholder: 'type email here' %></li>
-            <li class="padding"><%= f.input :message, placeholder: 'type message here', :as => :text %></li>
-            <%= f.button :submit, "Send" %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
+  </div>
+  <div class="column is-one-third is-offset-one-third">
+    <div class="center-text border-grey">
+      <ul>
+        <%= simple_form_for :contact do |f| %>
+        <li class="padding"><%= f.input :email, placeholder: 'type email here' %></li>
+        <li class="padding"><%= f.input :message, placeholder: 'type message here', :as => :text %></li>
+        <%= f.button :submit, "Send" %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

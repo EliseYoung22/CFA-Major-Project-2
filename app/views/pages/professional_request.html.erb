@@ -7,13 +7,14 @@
 </div>
 
 <div class="about-background">
-<div class="col-md-6">
-  <% if flash[:notice] %>
-      <div class="notice"><%= flash[:notice] %></div>
-    <% elsif flash[:warning] %>
-      <div class="alert alert-danger"><%= flash[:warning] %></div>
-    <% else %>
-  <% end %>
+  <div class="col-md-6">
+    <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% elsif flash[:warning] %>
+        <div class="alert alert-danger"><%= flash[:warning] %></div>
+      <% else %>
+    <% end %>
+  </div>
   <div class="column is-one-third is-offset-one-third">
     <div class="heading center-text border">
      <h1>Request</h1>

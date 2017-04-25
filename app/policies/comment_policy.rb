@@ -7,14 +7,13 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def update?
-    @record.user == @user 
-
+    @record.user == @user
   end
 
   def destroy?
     @record.user == @user || user.admin? || user.counselor?
-
   end
+  
   class Scope < Scope
     def resolve
       scope
