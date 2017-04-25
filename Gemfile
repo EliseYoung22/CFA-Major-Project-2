@@ -29,6 +29,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem "pundit"
 gem "rolify"
 gem 'paperclip-cloudinary'
+gem 'ransack'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
