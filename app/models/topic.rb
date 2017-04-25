@@ -4,13 +4,6 @@ class Topic < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  # def slug_candidate
-  #   [
-  #     :name,
-  #     [:name, :description]
-  #   ]
-  # end
-
   has_attached_file :cover_art, styles: { medium: "512x512>", thumb: "100x100>" }, :default_url => "/infinity.png", :storage => :cloudinary, :path => ":id/:style/:filename"
   validates_attachment_content_type :cover_art, content_type: /\Aimage\/.*\z/
 
