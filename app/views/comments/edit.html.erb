@@ -1,6 +1,16 @@
-<h1>Editing Comment</h1>
-
-<%= render 'form', comment: @comment %>
-
-<%= link_to 'Show', edit_topic_post_comment_path %> |
-<%= link_to 'Back', topic_posts_path %>
+<div class="background">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="heading center-text border-box banner-colour">
+        <h2>Edit Comment</h2>
+    </div>
+  </div>
+</div>
+<div class="white-body">
+  <div class="column is-one-third is-offset-one-third">
+    <div class="center-text border topic-card">
+      <%= render 'form', comment: @comment %>
+      <%= link_to 'Show', edit_topic_post_comment_path %>
+      <%= link_to 'Back', topic_posts_path %>
+    </div>
+  </div>
+</div>

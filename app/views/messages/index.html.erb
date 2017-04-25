@@ -1,37 +1,36 @@
 <div class="background">
   <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text border banner-colour">
+    <div class="heading center-text border-box banner-colour">
         <h2>chat</h2>
     </div>
   </div>
 </div>
-<div class="about-background">
+<div class="white-body">
   <div class="column is-one-third is-offset-one-third">
     <div class="center-text border topic-card">
       <h2 class="heading">Chat</h2>
-      <% if @over_ten %>
-       <%= link_to 'Show Previous', '?m=all' %>
-      <% end %>
+        <% if @over_ten %>
+         <%= link_to 'Show Previous', '?m=all' %>
+        <% end %>
       <div class="ui segment">
        <% @messages.each do |message| %>
-        <% if message.body %>
-         <% user = User.find(message.user_id) %>
-         <div class="item">
-          <div class="content">
-           <div class="header"><strong><%= user.email%></strong><%= message.message_time %></div>
-            <div class="list">
+          <% if message.body %>
+           <% user = User.find(message.user_id) %>
              <div class="item">
-              <i class="right triangle icon"></i>
-               <%= message.body %>
-               <%= link_to 'Delete', conversation_message_path(@conversation, message), method: :delete, data: { confirm: 'Are you sure?' } %>
-
+              <div class="content">
+               <div class="header"><strong><%= user.email%></strong><%= message.message_time %></div>
+                <div class="list">
+                 <div class="item">
+                    <i class="right triangle icon"></i>
+                     <%= message.body %>
+                     <%= link_to 'Delete', conversation_message_path(@conversation, message), method: :delete, data: { confirm: 'Are you sure?' } %>
+                 </div>
+               </div>
+              </div>
             </div>
-          </div>
-         </div>
-       </div>
-       <% end %>
-      <% end %>
-      </div>
+           <% end %>
+          <% end %>
+        </div>
       <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
        <div class="field">
          <%= f.text_area :body, class: "form-control" %>
@@ -42,7 +41,6 @@
        </div>
       <% end %>
       <%= link_to 'Back', conversations_path %>
-
     </div>
   </div>
 </div>

@@ -1,41 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<div class="about-background">
-  <div class="column is-half is-offset-one-quarter">
+<div class="white-body">
+  <div class="column is-8 is-offset-2">
     <div class="border topic-card">
       <p>
         <strong>Title:</strong>
         <%= @post.title %>
       </p>
-
       <p>
         <strong>Content:</strong>
         <%= @post.content %>
       </p>
-
       <p>
         <strong>User:</strong>
         <%= @post.user.email %>
       </p>
-
       <% if policy(@post).update? %>
         <td><%= link_to 'Edit', edit_topic_post_path(@post.topic, @post) %></td>
       <% end %>
       <%= link_to 'Back', topic_posts_path(@post.topic) %>
     </div>
-
     <div class="border topic-card">
       <%= render 'comments/form', comment: @comment, post: @post %>
     </div>
-
     <% @comments.each do |comment| %>
      <div class="border topic-card">
         <p><%= comment.user.email %></p>
         <p><%= comment.content %></p>
         <td><%= link_to 'Edit', edit_topic_post_comment_path(@topic, @post, comment) %></td>
         <td><%= link_to 'Destroy',topic_post_comment_path(@topic, @post, comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </div>
+      </div>
      <% end %>
    </div>
  </div>
 </div>
+<footer class="footer-image">
+  <img src="/assets/squiggle.jpg">
+</footer>

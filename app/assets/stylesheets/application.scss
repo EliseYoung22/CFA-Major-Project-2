@@ -24,23 +24,19 @@ $primary: white;
   font-size: 50px;
   font-weight: bold;
 }
-
 .center-text {
   text-align: center;
 }
-
 .border {
-  border: 1px solid #776B9A;
+  border: 1px solid #225056;
   padding: 5px 5px;
   margin-top: 10px;
   border-radius: 2px;
 }
-
 .border-grey {
   border: 1px solid #4D545C;
   padding: 5px 5px;
   margin-bottom: 20px;
-  // border-radius: 15px;
 }
 .table-border {
   border: 1px solid #4D545C;
@@ -49,23 +45,18 @@ $primary: white;
   margin-left: 10px;
   margin-right: 10px;
 }
-
 .padding {
   padding: 15px 15px;
 }
-
 .space {
   margin-right: 40px;
 }
-
 .margin-bottom {
   margin-bottom: 20px;
 }
-
 .home-page {
-  margin-top: 150px;
+  margin-top: 80px;
 }
-
 .button {
   background-color: #7FF2E0;
   color: #2E3435 !important;
@@ -82,15 +73,12 @@ $primary: white;
   color: #2E3435 !important;
   font-family: 'Didact Gothic', sans-serif;
   font-size: 20px;
-  // font-weight: bold;
 }
 .nav-item {
   color: #225056 !important;
-
 }
 .nav {
   background-color: #7FF2E0;
-  // opacity: 0.8;
 }
 .banner-colour {
   background-color: #7FF2E0;
@@ -133,4 +121,17 @@ a {
 }
 .white-body {
   background-color: white;
+}
+.footer-image {
+  opacity: 0.9;
+}
+.black-text {
+  color: black;
+  font-size: 20px;
+}
+.border-line {
+  border-bottom: 2px solid grey;
+}
+.post-title {
+  font-size: 30px;
 }

@@ -8,18 +8,18 @@
 </div>
 
 <body>
-  <div class="background">
+  <div class="white-body">
     <div class="container">
       <div class="columns is-multiline">
        <% @topics.each do |topic| %>
          <div class="column is-one-third">
             <div class="card">
-              <div class="card-image banner-colour">
+              <div class="card-image">
                 <figure class="image is-3by3">
                   <%= image_tag topic.cover_art.url(:medium) %>
                 </figure>
               </div>
-              <div class="card-content banner-colour">
+              <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                   </div>
@@ -41,7 +41,9 @@
           </div>
        <% end %>
       </div>
-      <%= link_to 'New Topic', new_topic_path if current_user.admin? %>
+      <div>
+        <%= link_to 'New Topic', new_topic_path if current_user.admin? %>
+      </div>
     </div>
   </div>
 </body>

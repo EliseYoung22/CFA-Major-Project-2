@@ -2,7 +2,7 @@
 
 <div class="background">
   <div class="column is-one-third is-offset-one-third">
-    <div class="heading center-text border banner-colour">
+    <div class="heading center-text border-box banner-colour">
       <h1> Posts</h1>
     </div>
     <div class="heading center-text ">
@@ -14,15 +14,15 @@
   </div>
 </div>
 
-<div class="about-background">
+<div class="white-body">
   <div class="column is-half is-offset-one-quarter">
     <table>
       <tbody>
         <% @posts.each do |post| %>
           <ul class="box topic-card center-text">
-            <li>Title:<%= post.title %></li>
+            <li class="post-title"><%= post.title %></li>
             <li><%= post.content %></li>
-            <li>User:<%= post.user.email %></li>
+            <li class="border-line">User:<%= post.user.email %></li>
             <%= link_to 'Show',  topic_post_path(post.topic, post) %>
             <% if policy(post).update? %>
               <%= link_to 'Edit', edit_topic_post_path(post.topic, post)%>

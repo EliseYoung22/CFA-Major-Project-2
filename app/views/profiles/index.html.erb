@@ -15,12 +15,12 @@
 </div>
 
 <body>
-<div class="white-body">
-  <div class="container">
-    <div class="columns is-multiline">
+  <div class="white-body">
+    <div class="container">
+      <div class="columns is-multiline">
         <% @profiles.each do |profile| %>
           <div class="column is-one-third ">
-            <div class="card is-one-third  border-grey topic-card">
+            <div class="card is-one-third border-grey">
               <div class="card-content">
                 <p class="title center-text">
                   <ul>
@@ -38,14 +38,15 @@
                     <li>Interests:<%= profile.interests %></li>
                   </ul>
                 </p>
-                <footer class="card-footer footer-colour border">
+                <footer class="card-footer background border">
                   <p class="card-footer-item">
                   <%= link_to 'Show', profile %>
                   <% if policy(profile).update? %>
                     <%= link_to 'Edit', edit_profile_path(profile)%>
                     <%= link_to 'Delete', profile_path(profile), method: :delete, data: { confirm: 'Are you sure?' } %>
                   <% end %>
-                </p>
+                  </p>
+                </footer>
               </div>
             </div>
           </div>
