@@ -1,7 +1,11 @@
 # Care For Caring
 
 ##### About
-Care for Caring is an online forum for youth who are in the position where they have become the main carer for their parents have somewhere to go and talk to a professional or other people in a similar situation. This project was created for our second major project at Coder Factory Academy. The project brief was to create a two sided platform and app to pitch to one of these three people with a related topic:
+Care for Caring is an online forum for youth who are in the position where they have become the main carer for their unwell parent or guardian. Care for caring gives these teenagers a place to go and talk to people in a similar situation and either talk about their issues or completely unrelated topics in the forum section. It also helps to connect the carers (the youth) with counsellors (the professional therapists) to give the opportunity to talk about any issues the carers may be facing and to promote positive mental health. At the press of a button a help request will be sent to the team and will prompt one the counsellors to initiate a conversation with the carer through the internal messaging system. The internal messaging system also give the carers an opportunity to connect with other members and chat about anything they want.
+The site also features a vouchers page where users can go to redeem vouchers for discounted meals and experiences like movie tickets and rock climbing.
+
+
+This project was created for our second major project at Coder Factory Academy. The project brief was to create a two sided platform and app to pitch to one of these three people with a related topic:
 - Barack Obama (politics)
 - Rupert Murdoch (journalism)
 - Bill & Melinda Gates (social causes/global development)
@@ -14,13 +18,13 @@ Care for Caring is an online forum for youth who are in the position where they 
 * Use appropriate gems.
 * Use environmental variables to protect API keys etc.
 * Implement a payment system for your product *
-* Your app must send transactional emails (eg. using Mailgun).
-* Your app should have an internal user messaging system.
-* Your app will have some type of searching, sorting and or filtering capability.
-* Your app will have some type of file uploading capability (eg. images).
-* Your app will have authentication (eg. Devise, must have full functionality in place).
-* Your app will have authorisation (users have restrictions on what they can see and edit).
-* Your app will have an admin dashboard for the admin user to administrate the site.
+* Must send transactional emails (eg. using Mailgun).
+* Have an internal user messaging system.
+* Have some type of searching, sorting and or filtering capability.
+* Have some type of file uploading capability (eg. images).
+* Have authentication (eg. Devise, must have full functionality in place).
+* Have authorisation (users have restrictions on what they can see and edit).
+* Have an admin dashboard for the admin user to administrate the site.
 * Document your application with a README that explains how to setup, configure and use your application.
 * The core functionality of your application needs to be tested with Rspec.
 
@@ -34,6 +38,8 @@ When presented with this project I immediately knew I wanted to focus on a socia
 ##### Wireframes
 ![wire1](https://cloud.githubusercontent.com/assets/25731474/25410339/6b143aca-2a59-11e7-9d84-2610aebed00a.jpg)
 ![wire2](https://cloud.githubusercontent.com/assets/25731474/25410340/6b1673b2-2a59-11e7-99be-2ecd76ac7740.jpg)
+![wire3](https://cloud.githubusercontent.com/assets/25731474/25410341/6b172eba-2a59-11e7-81bc-0d07faa303c8.jpg)
+
 
 ##### Database Maps
 ![db](https://cloud.githubusercontent.com/assets/25731474/25410331/656b10e4-2a59-11e7-8f02-abec0af3d5a1.jpg)
