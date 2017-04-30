@@ -12,6 +12,9 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
     @topic = Topic.friendly.find(params[:id])
+    # @q = Post.topics(params[:q])
+    # @posts = @q.result(distinct: true)
+
   end
 
   # GET /topics/new

@@ -8,13 +8,22 @@ class PostsController < ApplicationController
   def index
     @topic = Topic.friendly.find(params[:topic_id])
     @posts = @topic.posts
+
+    # @all_posts = Post.where(topic_id: params[:topic_id])
     # if params[:search]
     #   @posts = @topic.posts.search(params[:search]).order("created_at DESC")
     # else
     #   @posts = @topic.posts.order('created_at DESC')
     # end
-    # @q = Post.ransack(params[:q])
+
+    # @q = @all_posts.ransack(params[:q])
     # @posts = @q.result(distinct: true)
+
+    # @tweets = twitter_client.search("#" + "#{@question.hashtag}").take(9)
+    # @question_tweets = Tweet.where(question_id: params[:id])
+    # @q = @question_tweets.ransack(params[:q])
+    # @tweets = @q.result
+
   end
 
   # GET /posts/1
